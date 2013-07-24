@@ -11,31 +11,71 @@
 		<link rel="stylesheet" href="jm/jquery.mobile-1.3.1.css">
 		<link rel="stylesheet" href="jm/jquery.mobile.theme-1.3.1.css">
 		
+		<link rel="stylesheet" href="css/angelsec.min.css" />
 		<link rel="stylesheet" href="css/style.css">
 		
 		<script src="scripts/jquery-2.0.3.min.js"></script>
 		<script src="scripts/jquery-migrate-1.2.1.min.js"></script>
+		<script src="scripts/iscroll-lite.js"></script>
 		
 		<script src="jm/jquery.mobile-1.3.1.min.js"></script>
 		
 		<script type="text/javascript" charset="utf-8" src="scripts/cordova.js"></script>
 		
+		<script src="scripts/angelsec.js"></script>
+		
 	</head>
 	
 	<body>
 	
-		<div data-role="page" data-theme="c">
+		<div data-role="page" data-theme="a">
 		
-			<div data-role="header">
+			<div data-role="header" data-position="fixed">
 				<h1>Angel Patrol</h1>
 			</div><!-- /header -->
 			
-			<div data-role="content">
-				<p>Hello world</p>
-			</div><!-- /content -->
+			<div id="wrapper" data-role="content">
+				<div id="main-content">
+					<div id="pages">
+						
+						<!-- List out pages -->
+						
+						<!-- Login page -> to display by default -->
+						<div id="login" class="current">
+							<h2>Login</h2>
+						</div>
+						
+						<!-- Splash page -> to display by default if logged in -> About etc page -->
+						<div id="splash">
+							<h2>Splash</h2>
+						</div>
+						
+						<!-- Reports page -> to display by default if logged in -> Display Forms -->
+						<div id="reports">
+							<h2>Reports</h2>
+						</div>
+						
+						<!-- Photo Upload page -> to display by default if logged in -> Display Photo -->
+						<div id="photo">
+							<h2>Upload Photo</h2>
+						</div>
+						
+					</div><!-- /content -->
+				</div>
+			</div>
 			
-			<div data-role="footer">
-				<h4>My Footer</h4>
+			
+			<div data-role="footer" data-position="fixed">
+				
+				<!-- Display Nav If Logged In -->
+				<ul id="tab-bar">
+					
+					<li><a href="#splash">Home</a></li>
+					<li><a href="#reports">Reports</a></li>
+					<li><a href="#photo">Upload</a></li>
+					
+				</ul>			
+				
 			</div><!-- /footer -->
 		
 		</div><!-- /page -->
