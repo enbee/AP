@@ -1,11 +1,12 @@
 // --- JQUERY READY
 $().ready(function() { 
-
+	alert('jQuery');
 
 	// --- INIT iSCROLL LITE
 	var theScroll;
 	function scroll(){
 		theScroll = new iScroll('wrapper');
+		alert('Scroll');
 	}
 	document.addEventListener('DOMContentLoaded', scroll, false);
 	
@@ -13,7 +14,7 @@ $().ready(function() {
 	// --- CORDOVA READY
 	document.addEventListener("deviceready", onDeviceReady, false);   
 	function onDeviceReady() {
-		
+		alert('ready');
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
 		    var nextPage = $(e.target.hash);
