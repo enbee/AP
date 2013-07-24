@@ -9,9 +9,19 @@ document.addEventListener('DOMContentLoaded', scroll, false);
 $().ready(function() { 
 	
 	// --- CORDOVA READY
-	document.addEventListener("deviceready", onDeviceReady, false);   
+	/*
+document.addEventListener("deviceready", onDeviceReady, false);   
 	function onDeviceReady() {
-		alert('ready');
+*/
+
+		// CHECK IF LOGGED IN TO DISPLAY TAB-BAR
+		if(logged_in == true){
+			$('#footer h3').hide();
+			$('#tab-bar').show();
+		}
+		
+		
+		// TAB-BAR PAGE CONTOLLER
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
 		    var nextPage = $(e.target.hash);
@@ -20,7 +30,7 @@ $().ready(function() {
 		});
 		
 
-	}
+/* 	} */
 	
 	
 	function page(toPage) {

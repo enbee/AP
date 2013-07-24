@@ -17,6 +17,7 @@ body {
  line-height:1.5;
  font-size:16px;
 */
+ text-align: center;
  word-wrap: break-word;
  -webkit-text-size-adjust: none;
 }
@@ -58,7 +59,7 @@ img { border: 0; max-width: 100%; }
 
 /* TAB BAR STYLING */
 
-#tab-bar{ margin:0; padding:0; }
+#tab-bar{ margin:0; padding:0; display: none; }
 #tab-bar li { display: inline; float:left; width: 33.333%; }
 #tab-bar a { background-color: #000; color: #fff; display: block; font-weight: bold; overflow: hidden; position: relative; text-align: center; text-decoration: none; -webkit-touch-callout:none; padding-top: 10px; padding-bottom: 10px; }
 
