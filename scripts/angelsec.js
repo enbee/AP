@@ -1,14 +1,12 @@
 // --- INIT iSCROLL LITE
 var theScroll;
 function scroll(){
-	alert('Scroll');
 	theScroll = new iScroll('wrapper');
 }
 document.addEventListener('DOMContentLoaded', scroll, false);
 
 // --- JQUERY READY
 $().ready(function() { 
-	alert('jQuery');
 	
 	// --- CORDOVA READY
 	document.addEventListener("deviceready", onDeviceReady, false);   
