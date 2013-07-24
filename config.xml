@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id        = "com.upload.enbee"
+        versionCode="10" 
+        version   = "1.0.0">
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Angel Patrol</name>
+
+    <description>
+        Angel Patrol Application 
+    </description>
+
+    <author href="http://www.enbee-design.co.uk" email="nick@enbee-design.co.uk">
+        Nick Burchall 
+    </author>
+    
+    <!-- PREFERENCES -->
+    
+    <preference name="orientation"                value="portrait" />  
+    
+    
+    
+    <!-- ACCESS PERMISSIONS -->
+    <access origin="http://127.0.0.1*"/>
+    <access origin="http://asgt.mocwebservices.co.uk" />
+    <access origin=".*"/>
+
+</widget>
