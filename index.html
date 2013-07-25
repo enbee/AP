@@ -46,7 +46,26 @@
 						
 						<!-- Login page -> to display by default -->
 						<div id="login" class="current">
-							<h2>Login</h2>
+							<!-- <h2>Login</h2> -->
+							
+							<form id="loginform">
+								
+								<div id="userDiv" data-role="fieldcontain" class="ui-hide-label">
+									<label for="username">Username:</label>		
+									<input id="username" name="username" type="text" placeholder="Username" />
+								</div>
+								
+								<div id="passDiv" data-role="fieldcontain" class="ui-hide-label">
+									<label for="password">Password:</label>		
+									<input id="password" name="password" type="password" placeholder="Password" />
+								</div>
+								
+								<div id="submitDiv" data-role="fieldcontain">    
+									<input type="submit" value="Login" data-inline="true"/>
+								</div>
+								
+							</form>
+							
 						</div>
 						
 						<!-- Splash page -> to display by default if logged in -> About etc page -->
