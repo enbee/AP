@@ -29,7 +29,7 @@ function handleLogin() {
 	//navigator.notification.alert("click");
 	if(u != '' && p!= '') {
 		navigator.notification.alert('Go');
-        $.post("http://asgt.mocwebservices.co.uk/pg/login.php", {username:u,password:p}, function(res) {
+        $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p}, function(res) {
         	navigator.notification.alert(res);
             if(res == true) {
 				//store
