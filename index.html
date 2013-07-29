@@ -27,6 +27,7 @@
 		</script>
 		<script src="scripts/security.js"></script>
 		<script src="scripts/angelsec.js"></script>
+		<script src="scripts/upload.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			// CHECK LOCAL STORAGE FOR AUTO-LOGIN
 			if(logged_in == false) { checkPreAuth(); };
@@ -85,6 +86,12 @@
 						<!-- Photo Upload page -> to display by default if logged in -> Display Photo -->
 						<div id="photo">
 							<h2>Upload Photo</h2>
+							
+							<p id="upload_btn">Upload File</p>
+							<p id="success">Success! Click Here to Upload Another</p>
+							<p id="progress"><span></span></p>
+							<p id="response"></p>
+							
 						</div>
 						
 					</div><!-- /content -->
