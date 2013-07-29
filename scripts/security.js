@@ -31,7 +31,8 @@ function handleLogin() {
 		//navigator.notification.alert('Go');
         $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p}, function(response) {
         	navigator.notification.alert(JSON.stringify(response));
-            if(res == true) {
+            /*
+if(response == true) {
 				//store
 				window.localStorage["username"] = u;
 				window.localStorage["password"] = p;             
@@ -39,6 +40,7 @@ function handleLogin() {
 			} else {
 				navigator.notification.alert("Your login failed", function() {});
 			}
+*/
 			$("#submitButton").removeAttr("disabled");
 		},"json");
 	} else {
