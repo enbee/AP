@@ -28,9 +28,9 @@ function handleLogin() {
 	var p = $("#password", form).val();
 	//navigator.notification.alert("click");
 	if(u != '' && p!= '') {
-		navigator.notification.alert('Go');
-        $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p}, function(res) {
-        	navigator.notification.alert(res);
+		//navigator.notification.alert('Go');
+        $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p}, function(response) {
+        	navigator.notification.alert(JSON.stringify(response));
             if(res == true) {
 				//store
 				window.localStorage["username"] = u;
