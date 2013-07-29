@@ -29,6 +29,7 @@ function handleLogin() {
 	navigator.notification.alert("click");
 	if(u != '' && p!= '') {
         $.post("http://asgt.mocwebservices.co.uk/pg/login.php", {username:u,password:p}, function(res) {
+        	alert(res);
             if(res == true) {
 				//store
 				window.localStorage["username"] = u;
