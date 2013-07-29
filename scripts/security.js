@@ -34,9 +34,8 @@ function handleLogin() {
             if(response == true) {
 				//store
 				window.localStorage["username"] = u;
-				window.localStorage["password"] = p;             
-				
-				// logged_in = true;
+				window.localStorage["password"] = p; 
+				logged_in = true;
 				
 				$("#pages .current").removeClass("current");
 				$("#splash").addClass("current");

@@ -15,7 +15,6 @@ document.addEventListener("deviceready", onDeviceReady, false);
 */
 
 		// CHECK IF LOGGED IN TO DISPLAY TAB-BAR
-		logge_in == true;
 		if(logged_in == true){
 			$('#footer h3').hide();
 			$('#tab-bar').show();
