@@ -3,7 +3,7 @@ function init() {
 	delete init;
 }
 
-logged_in = false;
+// logged_in = false;
 
 function deviceReady() {
 	//alert('Device Ready');
@@ -35,7 +35,12 @@ function handleLogin() {
 				//store
 				window.localStorage["username"] = u;
 				window.localStorage["password"] = p;             
-				navigator.notification.alert('Change Page');
+				
+				// logged_in = true;
+				
+				$("#pages .current").removeClass("current");
+				$("#splash").addClass("current");
+				
 			} else {
 				navigator.notification.alert("Your login failed", function() {});
 			}
