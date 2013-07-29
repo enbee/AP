@@ -38,6 +38,8 @@ function handleLogin() {
 				logged_in = true;
 				
 				$("#pages .current").removeClass("current");
+				$('#footer h3').hide();
+				$('#tab-bar').show();
 				$("#splash").addClass("current");
 				
 			} else {

@@ -18,7 +18,16 @@ document.addEventListener("deviceready", onDeviceReady, false);
 		if(logged_in == true){
 			$('#footer h3').hide();
 			$('#tab-bar').show();
+		}	
+		/*
+function loggedCheck(){
+			if(logged_in == true){
+				$('#footer h3').hide();
+				$('#tab-bar').show();
+			}
 		}
+*/
+		
 		
 		
 		// TAB-BAR PAGE CONTOLLER
@@ -27,6 +36,7 @@ document.addEventListener("deviceready", onDeviceReady, false);
 		    var nextPage = $(e.target.hash);
 			$("#pages .current").removeClass("current");
 			nextPage.addClass("current");
+			loggedCheck();
 		});
 		
 
