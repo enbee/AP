@@ -27,10 +27,15 @@
 		</script>
 		<script src="scripts/security.js"></script>
 		<script src="scripts/angelsec.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			/* $("#loginPage").live("pageinit", function(e) { */
+				checkPreAuth();
+			/* }); */
+		</script>
 		
 	</head>
 	
-	<body>
+	<body onload="init()">
 	
 		<div data-role="page" data-theme="a">
 		
@@ -46,9 +51,9 @@
 						
 						<!-- Login page -> to display by default -->
 						<div id="login" class="current">
-							<!-- <h2>Login</h2> -->
+							<h2>Please Login To Continue</h2>
 							
-							<form id="loginform">
+							<form id="loginForm">
 								
 								<div id="userDiv" data-role="fieldcontain" class="ui-hide-label">
 									<label for="username">Username:</label>		
@@ -61,7 +66,7 @@
 								</div>
 								
 								<div id="submitDiv" data-role="fieldcontain">    
-									<input type="submit" value="Login" data-inline="true"/>
+									<input type="submit" value="Login" id="submitBtn" data-inline="true"/>
 								</div>
 								
 							</form>
@@ -90,7 +95,7 @@
 			
 			<div id="footer" data-role="footer" data-position="fixed">
 				
-				<h3>Please Login To Continue</h3>
+				<h3>&copy; Angel Patrol</h3>
 				
 				<!-- Display Nav If Logged In -->
 				<ul id="tab-bar">
