@@ -6,20 +6,17 @@ function init() {
 logged_in = false;
 
 function deviceReady() {
-	alert('Device Ready');
+	//alert('Device Ready');
 	$("#loginForm").on('submit',handleLogin);
 }
 
 function checkPreAuth() {
-	alert('checkAuth');
-	/*
-var form = $("#loginForm");
+	var form = $("#loginForm");
 	if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
 		$("#username", form).val(window.localStorage["username"]);
 		$("#password", form).val(window.localStorage["password"]);
 		handleLogin();
 	}
-*/
 }
 
 function handleLogin() {

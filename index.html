@@ -28,9 +28,8 @@
 		<script src="scripts/security.js"></script>
 		<script src="scripts/angelsec.js"></script>
 		<script type="text/javascript" charset="utf-8">
-			/* $("#loginPage").live("pageinit", function(e) { */
-				checkPreAuth();
-			/* }); */
+			// CHECK LOCAL STORAGE FOR AUTO-LOGIN
+			if(logged_in == false) { checkPreAuth(); };
 		</script>
 		
 	</head>
