@@ -20,21 +20,20 @@ function checkPreAuth() {
 }
 
 function handleLogin() {
-	alert('Handle Login');
-	/*
-var form = $("#loginForm");    
+	//alert('Handle Login');
+	var form = $("#loginForm");    
 	//disable the button so we can't resubmit while we wait
 	$("#submitButton",form).attr("disabled","disabled");
 	var u = $("#username", form).val();
 	var p = $("#password", form).val();
-	console.log("click");
+	navigator.notification.alert("click");
 	if(u != '' && p!= '') {
-        $.post("http://asgt.mocwebservices.co.uk/pg/service.php?method=login&returnformat=json", {username:u,password:p}, function(res) {
+        $.post("http://asgt.mocwebservices.co.uk/pg/login.php", {username:u,password:p}, function(res) {
             if(res == true) {
 				//store
 				window.localStorage["username"] = u;
 				window.localStorage["password"] = p;             
-				alert('Change Page');
+				navigator.notification.alert('Change Page');
 			} else {
 				navigator.notification.alert("Your login failed", function() {});
 			}
@@ -46,7 +45,6 @@ var form = $("#loginForm");
 		$("#submitButton").removeAttr("disabled");
 	}
 	return false;
-*/
 }
 
 /* function deviceReady() { */
