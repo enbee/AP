@@ -26,10 +26,11 @@ function handleLogin() {
 	$("#submitButton",form).attr("disabled","disabled");
 	var u = $("#username", form).val();
 	var p = $("#password", form).val();
-	navigator.notification.alert("click");
+	//navigator.notification.alert("click");
 	if(u != '' && p!= '') {
+		navigator.notification.alert('Go');
         $.post("http://asgt.mocwebservices.co.uk/pg/login.php", {username:u,password:p}, function(res) {
-        	alert(res);
+        	navigator.notification.alert(res);
             if(res == true) {
 				//store
 				window.localStorage["username"] = u;
