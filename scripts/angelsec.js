@@ -15,24 +15,15 @@ $().ready(function() {
 	
 		// CHECK USER LOGGED IN			
 		if(logged_in != 'true'|| logged_in == undefined){
-			// checkPreAuth();
+			// Not Logged -> Display Login
 			page('#login');
 		}else{
+			// Logged In Display Splash Page
 			loggedCheck();
 			page('#splash');
-			/*
-$("#pages .current").removeClass("current");
-			$("#pages #splash").addClass("current");
-*/
 		}
-
-		// CHECK IF LOGGED IN TO DISPLAY TAB-BAR
-		/*
-if(logged_in == 'true'){
-			$('#footer h3').hide();
-			$('#tab-bar').show();
-		}
-*/	
+		
+		// Check Whether Logged As To Display Nav
 		function loggedCheck(){
 			if(logged_in == 'true'){
 				$('#footer h3').hide();
@@ -40,15 +31,10 @@ if(logged_in == 'true'){
 			}
 		}
 		
-		
-		
 		// TAB-BAR PAGE CONTOLLER
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
 		    var nextPage = $(e.target.hash);
-			//$("#pages .current").removeClass("current");
-			//nextPage.addClass("current");
-			//loggedCheck();
 			page(nextPage);
 		});
 		
@@ -57,17 +43,15 @@ if(logged_in == 'true'){
 	
 	
 	function page(toPage) {
-		alert('Change');
+	
 		var toPage = $(toPage),
 		fromPage = $("#pages .current");
 		if(toPage.hasClass("current") || toPage === fromPage) {
 			return;
 		};
-		toPage.addClass("current fade in").one("webkitAnimationEnd", function(){
-			fromPage.removeClass("current fade out");
-			toPage.removeClass("fade in")
+		toPage.addClass("current").toggle('slow'), function(){
+			fromPage.removeClass("current").toggle('slow');
 		});
-		fromPage.addClass("fade out");
 	}
 
 });
