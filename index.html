@@ -34,7 +34,7 @@
 			// CHECK LOCAL STORAGE FOR AUTO-LOGIN
 			alert('Logged In = '+logged_in);
 			
-			if(logged_in == undefined || logged_in != true){
+			if(logged_in != 'true'|| logged_in == undefined){
 				alert('check auth');
 				checkPreAuth();
 			}else{
@@ -99,8 +99,8 @@
 							<h2>Upload Photo</h2>
 							
 							<p id="upload_btn" data-role="button">Upload File</p>
-							<p id="success" data-role="button">Success! Click Here to Upload Another</p>
 							<p id="progress"><span></span></p>
+							<p id="success" data-role="button">Success! Click Here to Upload Another</p>
 							<p id="response"></p>
 							
 						</div>
