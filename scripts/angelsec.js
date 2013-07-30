@@ -48,8 +48,8 @@ $().ready(function() {
 		fromPage = $("#pages .current");
 		if(toPage.hasClass("current") || toPage === fromPage) {
 			return;
-		};
-		fromPage.removeClass("current").toggle('slow'), function(){
+		}
+		fromPage.removeClass("current").toggle('slow', function(){
 			toPage.addClass("current").toggle('slow');
 		});
 		
