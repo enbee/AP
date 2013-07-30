@@ -36,7 +36,8 @@
 			if(logged_in == undefined || logged_in != true){
 				checkPreAuth();
 			}else{
-				
+				$("#pages .current").removeClass("current");
+				$("#pages #splash").addClass("current");
 			}
 		</script>
 		

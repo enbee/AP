@@ -71,6 +71,7 @@ img { border: 0; max-width: 100%; }
 
 /* PHOTO UPLOAD STYLING  */
 
+#progress { display: none; }
 #progress span { display: block; padding: 2px 0; width: 0; background: #193; text-align: center; }
 #success{ display: none; }
 
