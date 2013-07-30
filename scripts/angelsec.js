@@ -20,6 +20,7 @@ $().ready(function() {
 			checkPreAuth();
 		}else{
 			alert('already logged');
+			loggedCheck();
 			page('#splash');
 			/*
 $("#pages .current").removeClass("current");
@@ -34,14 +35,12 @@ if(logged_in == 'true'){
 			$('#tab-bar').show();
 		}
 */	
-		/*
-function loggedCheck(){
+		function loggedCheck(){
 			if(logged_in == true){
 				$('#footer h3').hide();
 				$('#tab-bar').show();
 			}
 		}
-*/
 		
 		
 		
