@@ -47,7 +47,10 @@ $().ready(function() {
 			//alert(JSON.stringify(imageURI));
 			
 			var ft = new FileTransfer();
-
+			
+			$('#upload_btn').toggle('slow', function(){
+				$('#progress').toggle('slow');
+			});
 			
 			ft.onprogress = function(progressEvent) {
 				
@@ -55,9 +58,6 @@ $().ready(function() {
 					var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
 					//statusDom.innerHTML = perc + "% loaded...";
 					//$('#response').append(perc + "% loaded...");
-					$('#upload_btn').toggle('slow', function(){
-						$('#progress').toggle('slow');
-					});
 					
 					$('#progress span').css({
 						'width': perc + "%"
