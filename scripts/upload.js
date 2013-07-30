@@ -84,12 +84,9 @@ $().ready(function() {
 			}else{
 				var imgURL = 'http://asgt.mocwebservices.co.uk/'+str;
 				$('#progress span').html("Upload Complete");
-				$('#response').prepend('Success: '+imgURL);
+				//$('#response').prepend('Success: '+imgURL);
 				// Complete
-				$('#upload_btn').toggle('slow', function() {
-				    // Animation complete.
-				    $('#success').toggle('slow');
-				  });
+				$('#success').toggle('slow');
 				  
 				$('<img>').attr({
 					'src': imgURL
