@@ -103,6 +103,10 @@ $().ready(function() {
 		}
 		
 		$('#success').click(function() {
-		    location.reload();
+		    $('#response').empty();
+		    $('#success').toggle('slow', function() {
+				// Animation complete.
+				$('#upload_btn').toggle('slow');
+			});
 		});
 });
