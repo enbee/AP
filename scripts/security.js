@@ -12,9 +12,9 @@ function deviceReady() {
 
 function checkPreAuth() {
 	var form = $("#loginForm");
-	if(window.localStorage["username"] != undefined && window.localStorage["password"] != undefined) {
-		$("#username", form).val(window.localStorage["username"]);
-		$("#password", form).val(window.localStorage["password"]);
+	if(window.localStorage["ap_username"] != undefined && window.localStorage["ap_password"] != undefined) {
+		$("#username", form).val(window.localStorage["ap_username"]);
+		$("#password", form).val(window.localStorage["ap_password"]);
 		handleLogin();
 	}
 }
@@ -33,9 +33,9 @@ function handleLogin() {
         	//navigator.notification.alert(JSON.stringify(response));
             if(response == true) {
 				//store
-				window.localStorage["username"] = u;
-				window.localStorage["password"] = p; 
-				logged_in = true;
+				window.localStorage["ap_username"] = u;
+				window.localStorage["ap_password"] = p; 
+				window.localStorage["ap_logged_in"] = true; 
 				
 				$("#pages .current").removeClass("current");
 				$('#footer h3').hide();
