@@ -56,13 +56,12 @@ $().ready(function() {
 					//statusDom.innerHTML = perc + "% loaded...";
 					//$('#response').append(perc + "% loaded...");
 					$('#upload_btn').toggle('slow', function(){
-						$('#progress').toggle('slow', function(){
-							
-							$('#progress span').css({
-								'width': perc + "%"
-							}).html(perc + "%");
-						});
+						$('#progress').toggle('slow');
 					});
+					
+					$('#progress span').css({
+						'width': perc + "%"
+					}).html(perc + "%");
 					
 				} else {
 					if(statusDom.innerHTML == "") {
@@ -112,6 +111,7 @@ $().ready(function() {
 		    $('#response').empty();
 		    $('progress').toggle('slow');
 		    $('#success').toggle('slow', function() {
+		    	$('#upload_btn').toggle('slow');
 				// Animation complete.
 				$('#progress span').css({
 						'width': "0%"
