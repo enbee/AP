@@ -5,22 +5,35 @@
 		theScroll = new iScroll('wrapper');
 	}
 */
-document.addEventListener('DOMContentLoaded', scroll, false);
+/* document.addEventListener('DOMContentLoaded', scroll, false); */
 
 // --- JQUERY READY
-$().ready(function() { 
-	
+$().ready(function() { 	
 	// --- CORDOVA READY
-	/*
-document.addEventListener("deviceready", onDeviceReady, false);   
+	document.addEventListener("deviceready", onDeviceReady, false);   
 	function onDeviceReady() {
+	
+		alert('Logged In = '+logged_in);
+			
+		if(logged_in != 'true'|| logged_in == undefined){
+			alert('check auth');
+			checkPreAuth();
+		}else{
+			alert('already logged');
+			page('#splash');
+			/*
+$("#pages .current").removeClass("current");
+			$("#pages #splash").addClass("current");
 */
+		}
 
 		// CHECK IF LOGGED IN TO DISPLAY TAB-BAR
-		if(logged_in == true){
+		/*
+if(logged_in == 'true'){
 			$('#footer h3').hide();
 			$('#tab-bar').show();
-		}	
+		}
+*/	
 		/*
 function loggedCheck(){
 			if(logged_in == true){
@@ -36,13 +49,14 @@ function loggedCheck(){
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
 		    var nextPage = $(e.target.hash);
-			$("#pages .current").removeClass("current");
-			nextPage.addClass("current");
-			loggedCheck();
+			//$("#pages .current").removeClass("current");
+			//nextPage.addClass("current");
+			//loggedCheck();
+			page(nextPage);
 		});
 		
 
-/* 	} */
+	}
 	
 	
 	function page(toPage) {
