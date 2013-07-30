@@ -13,13 +13,11 @@ $().ready(function() {
 	document.addEventListener("deviceready", onDeviceReady, false);   
 	function onDeviceReady() {
 	
-		alert('Logged In = '+logged_in);
-			
+		// CHECK USER LOGGED IN			
 		if(logged_in != 'true'|| logged_in == undefined){
-			alert('check auth');
-			checkPreAuth();
+			// checkPreAuth();
+			page('#login');
 		}else{
-			alert('already logged');
 			loggedCheck();
 			page('#splash');
 			/*
@@ -36,7 +34,7 @@ if(logged_in == 'true'){
 		}
 */	
 		function loggedCheck(){
-			if(logged_in == true){
+			if(logged_in == 'true'){
 				$('#footer h3').hide();
 				$('#tab-bar').show();
 			}
