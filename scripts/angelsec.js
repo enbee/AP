@@ -43,8 +43,20 @@ $().ready(function() {
 	
 	
 	function page(toPage) {
-	
+		
 		var toPage = $(toPage),
+		fromPage = $("#pages .current");
+		if(toPage.hasClass("current") || toPage === fromPage) {
+			return;
+		};
+		toPage.addClass("current fade in").one("webkitAnimationEnd", function(){
+			fromPage.removeClass("current fade out");
+			toPage.removeClass("fade in")
+		});
+		fromPage.addClass("fade out");
+		
+		/*
+var toPage = $(toPage),
 		fromPage = $("#pages .current");
 		if(toPage.hasClass("current") || toPage === fromPage) {
 			return;
@@ -52,6 +64,8 @@ $().ready(function() {
 		toPage.addClass("current").toggle('slow'), function(){
 			fromPage.removeClass("current").toggle('slow');
 		});
+*/
+		
 	}
 
 });
