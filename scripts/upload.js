@@ -101,4 +101,8 @@ $().ready(function() {
 			$('#response').append('Error Source: '+error.source+'</br>'); 
 			$('#response').append('Error Target: '+error.target+'</br>');
 		}
+		
+		$('#success').click(function() {
+		    location.reload();
+		});
 });
