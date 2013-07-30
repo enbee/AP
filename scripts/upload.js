@@ -61,6 +61,7 @@ $().ready(function() {
 							$('#progress span').css({
 								'width': perc + "%"
 							}).html(perc + "%");
+						});
 					});
 					
 				} else {

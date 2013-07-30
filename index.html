@@ -24,7 +24,7 @@
 		<script type="text/javascript" charset="utf-8">
 			// Define Global Variables
 			var logged_in = window.localStorage.getItem("ap_logged_in");
-			alert(logged_in);
+			//alert(logged_in);
 			// CHECK LOCAL STORAGE FOR AUTO-LOGIN
 			/* if(logged_in == false) { checkPreAuth(); }; */
 		</script>
@@ -34,8 +34,10 @@
 		<script type="text/javascript" charset="utf-8">
 			// CHECK LOCAL STORAGE FOR AUTO-LOGIN
 			if(logged_in == undefined || logged_in != true){
+				alert('check auth');
 				checkPreAuth();
 			}else{
+				alert('already logged');
 				$("#pages .current").removeClass("current");
 				$("#pages #splash").addClass("current");
 			}
