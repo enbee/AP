@@ -79,15 +79,20 @@ $().ready(function() {
 			}else{
 				var imgURL = 'http://asgt.mocwebservices.co.uk/'+str;
 				
-				$('#response').append('Success: '+imgURL);
+				$('#response').prepend('Success: '+imgURL);
 				// Complete
+				$('#upload_btn').toggle('slow', function() {
+				    // Animation complete.
+				    $('#success').toggle('slow');
+				  });
+				  
 				$('<img>').attr({
 					'src': imgURL
 				}).css({
 					'margin': '10px auto',
 					'width': '90%',
 					'height': 'auto'
-				}).appendTo($('#response'));
+				}).prependTo($('#response'));
 			}
 		}
 
