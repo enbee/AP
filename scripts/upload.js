@@ -106,13 +106,15 @@ $().ready(function() {
 		
 		$('#success').click(function() {
 		    $('#response').empty();
-		    $('progress').toggle('slow');
+		    $('progress').toggle('slow', function(){
+			    // Animation complete.
+				$('#progress span').css({
+					'width': "0%"
+				}).empty();
+		    });
 		    $('#success').toggle('slow', function() {
 		    	$('#upload_btn').toggle('slow');
-				// Animation complete.
-				$('#progress span').css({
-						'width': "0%"
-					}).empty().toggle('slow');
+				
 			});
 		});
 });
