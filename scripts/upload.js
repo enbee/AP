@@ -107,6 +107,9 @@ $().ready(function() {
 		    $('#success').toggle('slow', function() {
 				// Animation complete.
 				$('#upload_btn').toggle('slow');
+				$('#progress span').css({
+						'width': "0%"
+					}).empty();
 			});
 		});
 });
