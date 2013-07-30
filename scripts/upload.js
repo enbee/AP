@@ -106,7 +106,7 @@ $().ready(function() {
 		
 		$('#success').click(function() {
 		    $('#response').empty();
-		    $('progress').toggle('slow', function(){
+		    $('#progress').toggle('slow', function(){
 			    // Animation complete.
 				$('#progress span').css({
 					'width': "0%"
