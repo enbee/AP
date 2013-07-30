@@ -23,7 +23,8 @@
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			// Define Global Variables
-			alert(window.localStorage["ap_logged_in"]);
+			var logged_in = window.localStorage.getItem("ap_logged_in");
+			alert(logged_in);
 			// CHECK LOCAL STORAGE FOR AUTO-LOGIN
 			/* if(logged_in == false) { checkPreAuth(); }; */
 		</script>
@@ -32,7 +33,7 @@
 		<script src="scripts/upload.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			// CHECK LOCAL STORAGE FOR AUTO-LOGIN
-			if(window.localStorage["ap_logged_in"] == undefined || window.localStorage["ap_logged_in"] != true){
+			if(logged_in == undefined || logged_in != true){
 				checkPreAuth();
 			}
 		</script>

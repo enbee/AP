@@ -33,9 +33,9 @@ function handleLogin() {
         	//navigator.notification.alert(JSON.stringify(response));
             if(response == true) {
 				//store
-				window.localStorage["ap_username"] = u;
-				window.localStorage["ap_password"] = p; 
-				window.localStorage["ap_logged_in"] = true; 
+				window.localStorage.setItem("ap_username", u);
+				window.localStorage.setItem("ap_password", p); 
+				window.localStorage.setItem("ap_logged_in", true); 
 				
 				$("#pages .current").removeClass("current");
 				$('#footer h3').hide();
