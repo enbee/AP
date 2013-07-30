@@ -35,7 +35,7 @@ img { border: 0; max-width: 100%; }
 
 /* Page Control */
 #pages > div { display: none; padding: 10px; }
-#pages > div.current { display: block; }
+/* #pages > div.current { display: block; } */
 
 /* Default Page Styling */
 #pages{ position:relative; }

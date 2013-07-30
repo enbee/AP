@@ -49,11 +49,17 @@ $().ready(function() {
 		if(toPage.hasClass("current") || toPage === fromPage) {
 			return;
 		};
-		toPage.addClass("current fade in").one("webkitAnimationEnd", function(){
+		fromPage.removeClass("current").toggle('slow'), function(){
+			toPage.addClass("current").toggle('slow');
+		});
+		
+		/*
+toPage.addClass("current fade in").one("webkitAnimationEnd", function(){
 			fromPage.removeClass("current fade out");
 			toPage.removeClass("fade in")
 		});
 		fromPage.addClass("fade out");
+*/
 		
 		/*
 var toPage = $(toPage),
