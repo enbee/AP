@@ -39,6 +39,12 @@ $().ready(function() {
 		});
 		
 		
+		$('a#logout').on('click', function(e){
+			e.preventDefault();
+		    logout();
+		});
+		
+		
 		// FORM PAGE CONTOLLER
 		$('#form-list a').on('click', function(e){
 			// CALL FORM PAGE
@@ -61,6 +67,19 @@ $().ready(function() {
 		});
 		
 
+	}
+	
+	function logout(){
+		
+		window.localStorage.removeItem("ap_username");
+		window.localStorage.removeItem("ap_password");
+		window.localStorage.setItem("ap_logged_in", false); 
+		
+		page('#login');
+		
+		$('#tab-bar').hide();
+		$('#footer h3').show();
+		
 	}
 	
 	
