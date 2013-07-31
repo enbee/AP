@@ -47,10 +47,12 @@ $().ready(function() {
 			page(nextPage);
 			
 			// LOAD FORM
-			var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
+			/*
+var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
 			var formId  = $(this).attr('id');
 			
 			alert('Form ID: '+formID);
+*/
 			
 		});
 		
