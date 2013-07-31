@@ -62,11 +62,9 @@ var nextPage = $(e.target.hash);
 	}
 	
 	
-	function page(newPage) {
-		
-		alert('Go To: '+newPage);
-		
-		var toPage = $(newPage),
+	function page(toPage) {
+	
+		var toPage = $(toPage),
 		fromPage = $("#pages .current");
 				
 		if(toPage.hasClass("current") || toPage === fromPage) {
@@ -75,6 +73,8 @@ var nextPage = $(e.target.hash);
 		fromPage.removeClass("current").toggle('slow', function(){
 			toPage.addClass("current").toggle('slow');
 		});
+		
+		alert('Go To: '+JSON.stringify(toPage));
 		
 		/*
 toPage.addClass("current fade in").one("webkitAnimationEnd", function(){
