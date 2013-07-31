@@ -74,7 +74,7 @@ var nextPage = $(e.target.hash);
 			toPage.addClass("current").toggle('slow');
 		});
 		
-		alert('Go To: '+JSON.stringify(toPage));
+		//alert('Go To: '+JSON.stringify(toPage));
 		
 		/*
 toPage.addClass("current fade in").one("webkitAnimationEnd", function(){
