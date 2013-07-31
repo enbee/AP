@@ -48,7 +48,7 @@ $().ready(function() {
 			
 			// LOAD FORM
 			var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
-			var formId  = $(JSON.stringify(e.target.id));
+			var formId  = JSON.stringify($(e.target.id));
 			
 			alert('ID: '+formId);
 			
