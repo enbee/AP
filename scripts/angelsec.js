@@ -42,13 +42,15 @@ $().ready(function() {
 		// FORM PAGE CONTOLLER
 		$('#form-list a').on('click', function(e){
 			// CALL FORM PAGE
-			var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
+			/*
+var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
 			var formId  = JSON.stringify(e.target.id);
 			
 			alert('ID: '+formId);
 			
 			
 			e.preventDefault();
+*/
 		    /*
 var nextPage = $(e.target.hash);
 			page(nextPage);
