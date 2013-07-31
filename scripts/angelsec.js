@@ -41,20 +41,28 @@ $().ready(function() {
 		
 		// FORM PAGE CONTOLLER
 		$('#form-list a').on('click', function(e){
+			// CALL FORM PAGE
 			e.preventDefault();
 		    var nextPage = $(e.target.hash);
 			page(nextPage);
+			
+			// LOAD FORM
+			var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
+			var formId  = $(this).attr('id');
+			
+			alert('Form ID: '+formID);
+			
 		});
 		
 
 	}
 	
 	
-	function page(toPage) {
+	function page(newPage) {
 		
-		alert('Go To: '+toPage);
+		alert('Go To: '+newPage);
 		
-		var toPage = $(toPage),
+		var toPage = $(newPage),
 		fromPage = $("#pages .current");
 				
 		if(toPage.hasClass("current") || toPage === fromPage) {
