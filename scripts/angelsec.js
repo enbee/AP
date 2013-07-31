@@ -45,12 +45,16 @@ $().ready(function() {
 			e.preventDefault();
 			var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
 			var formId  = e.target.id;
+			var from = formLoc + formId + '.html';
 			
-			alert('ID: '+formId);
-		    /*
-var nextPage = $(e.target.hash);
+			$.get(form, function(data) {
+				$('#form-content').html(data);
+				alert('Load was performed.');
+			});
+			
+			
+		    var nextPage = $(e.target.hash);
 			page(nextPage);
-*/
 			
 			// LOAD FORM
 			
