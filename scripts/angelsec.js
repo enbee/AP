@@ -38,16 +38,24 @@ $().ready(function() {
 			page(nextPage);
 		});
 		
+		
+		// FORM PAGE CONTOLLER
+		$('#form-list a').on('click', function(e){
+			e.preventDefault();
+		    var nextPage = $(e.target.hash);
+			page(nextPage);
+		});
+		
 
 	}
 	
 	
 	function page(toPage) {
 		
+		alert('Go To: '+toPage);
+		
 		var toPage = $(toPage),
 		fromPage = $("#pages .current");
-		
-		alert('Go To: '+toPage);
 				
 		if(toPage.hasClass("current") || toPage === fromPage) {
 			return;
@@ -55,10 +63,6 @@ $().ready(function() {
 		fromPage.removeClass("current").toggle('slow', function(){
 			toPage.addClass("current").toggle('slow');
 		});
-		
-		if(toPage == '#form'){
-			
-		}
 		
 		/*
 toPage.addClass("current fade in").one("webkitAnimationEnd", function(){

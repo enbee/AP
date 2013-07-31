@@ -24,6 +24,7 @@
 		<script type="text/javascript" charset="utf-8">
 			// Define Global Variables
 			var logged_in = window.localStorage.getItem("ap_logged_in");
+			var currentFormId = null;
 			// CHECK LOCAL STORAGE FOR AUTO-LOGIN
 			/* if(logged_in == false) { checkPreAuth(); }; */
 		</script>
@@ -98,9 +99,17 @@ alert('Logged In = '+logged_in);
 						<div id="reports">
 							<h2>Reports</h2>
 							
+							<!-- GET LIST OF FORMS -->
+							
 							<!-- LIST OUT FORMS AVAILABLE TO USER -->
-							<a href="#form" id="form1" class="report-btn">Alarm Response</a>
-							<a href="#form" id="form2" class="report-btn">Manned Guard</a>
+							<ul id="form-list">
+					
+								<li><a href="#form" id="form1" class="report-btn">Alarm Response</a></li>
+								<li><a href="#form" id="form2" class="report-btn">Manned Guard</a></li>
+								
+							</ul>
+							
+							
 							
 							
 							
