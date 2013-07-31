@@ -50,9 +50,9 @@ $().ready(function() {
 			/*
 var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
 			var formId  = $(this).attr('id');
-			
-			alert('Form ID: '+formID);
 */
+			
+			alert('Target: '+e.target.hash);
 			
 		});
 		
