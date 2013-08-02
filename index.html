@@ -92,9 +92,9 @@ alert('Logged In = '+logged_in);
 						
 						<!-- Splash page -> to display by default if logged in -> About etc page -->
 						<div id="splash">
-							<img src="img/angel-patrol.png" width="80%">
+							<p><img src="img/angel-patrol.png" width="80%"></p>
 							
-							<a href="#logout" id="logout">Logout</a>
+							<a href="#logout" id="logout" data-role="button" data-icon="minus">Logout</a>
 						</div>
 						
 						<!-- Reports page -> to display by default if logged in -> Display Forms -->
@@ -106,8 +106,8 @@ alert('Logged In = '+logged_in);
 							<!-- LIST OUT FORMS AVAILABLE TO USER -->
 							<ul id="form-list" class="btn-list">
 								
-								<li><a href="#form" id="form1" class="report-btn" data-role="button">Alarm Response</a></li>
-								<li><a href="#form" id="form2" class="report-btn" data-role="button">Manned Guard</a></li>
+								<li><a href="#form" id="form1" class="report-btn" data-role="button" data-icon="plus">Alarm Response</a></li>
+								<li><a href="#form" id="form2" class="report-btn" data-role="button" data-icon="plus">Manned Guard</a></li>
 								
 							</ul>
 							
