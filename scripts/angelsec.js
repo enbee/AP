@@ -75,6 +75,9 @@ $().ready(function() {
 		window.localStorage.removeItem("ap_password");
 		window.localStorage.setItem("ap_logged_in", false); 
 		
+		// Reset form
+		$('#loginForm').find("input[type=text], textarea").val("");
+		
 		page('#login');
 		
 		$('#tab-bar').hide();
