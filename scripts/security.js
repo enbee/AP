@@ -28,7 +28,7 @@ function handleLogin() {
 	var p = $("#password", form).val();
 	//navigator.notification.alert("click");
 	if(u != '' && p!= '') {
-		alert('Ready to perform login');
+		
 		//navigator.notification.alert('Go');
         $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p}, function(response) {
         	//navigator.notification.alert(JSON.stringify(response));
@@ -39,11 +39,10 @@ function handleLogin() {
 				window.localStorage.setItem("ap_password", p); 
 				window.localStorage.setItem("ap_logged_in", true); 
 				
-				page('#splash');
-				/*
-$("#pages .current").removeClass("current");
+				alert('Switch Pages');
+				//page('#splash');
+				$("#pages .current").removeClass("current");
 				$("#splash").addClass("current");
-*/
 				$('#footer h3').hide();
 				$('#tab-bar').show();
 				
