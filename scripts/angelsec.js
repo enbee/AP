@@ -76,7 +76,7 @@ $().ready(function() {
 		window.localStorage.setItem("ap_logged_in", false); 
 		
 		// Reset form
-		$('#loginForm').find("input[type=text], textarea").val("");
+		$('#loginForm').find("input[type=password], input[type=text], textarea").val("");
 		
 		page('#login');
 		
