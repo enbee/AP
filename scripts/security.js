@@ -37,7 +37,7 @@ function handleLogin() {
         	navigator.notification.alert(success);
         	// Set variables
         	
-            if(success == true) {
+            if(success == 'true') {
             	//navigator.notification.alert("Login Success");
 				//store
 				window.localStorage.setItem("ap_username", u);
