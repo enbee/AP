@@ -39,10 +39,14 @@ function handleLogin() {
 				window.localStorage.setItem("ap_password", p); 
 				window.localStorage.setItem("ap_logged_in", true); 
 				
-				$("#pages .current").removeClass("current");
+				page('#splash');
+				/*
+$("#pages .current").removeClass("current");
+				$("#splash").addClass("current");
+*/
 				$('#footer h3').hide();
 				$('#tab-bar').show();
-				$("#splash").addClass("current");
+				
 				
 			} else {
 				navigator.notification.alert("Your login failed", function() {});
