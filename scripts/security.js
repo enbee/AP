@@ -39,10 +39,17 @@ function handleLogin() {
 				window.localStorage.setItem("ap_password", p); 
 				window.localStorage.setItem("ap_logged_in", true); 
 				
-				alert('Switch Pages');
+				//alert('Switch Pages');
 				//page('#splash');
-				$("#pages .current").removeClass("current");
+				/*
+$("#pages .current").removeClass("current");
 				$("#splash").addClass("current");
+*/
+				$("#pages .current").removeClass("current").toggle('slow', function(){
+					$("#splash").addClass("current").toggle('slow');
+				});
+				
+				
 				$('#footer h3').hide();
 				$('#tab-bar').show();
 				
