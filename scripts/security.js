@@ -33,7 +33,7 @@ function handleLogin() {
         $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p}, function(response) {
         	//navigator.notification.alert(JSON.stringify(response));
             if(response == true) {
-            	navigator.notification.alert("Login Success");
+            	//navigator.notification.alert("Login Success");
 				//store
 				window.localStorage.setItem("ap_username", u);
 				window.localStorage.setItem("ap_password", p); 
