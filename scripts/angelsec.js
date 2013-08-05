@@ -62,11 +62,13 @@ $().ready(function() {
 			page(nextPage);
 			
 			triggerFormLoading();
-			$.get(form, function(data) {
+			/*
+$.get(form, function(data) {
 				triggerFormLoading();
 				$('#form-content').html(data);
 				alert('Load was performed.');
 			});
+*/
 			
 			
 		    
