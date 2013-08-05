@@ -69,8 +69,10 @@ $("#pages .current").removeClass("current");
 		$("#authBtn").removeAttr("disabled");
 	}
 	$("#authBtn").removeAttr("disabled");
-	alert('false');
+	/*
+alert('false');
 	return false;
+*/
 }
 
 
