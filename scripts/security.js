@@ -23,25 +23,25 @@ function checkPreAuth() {
 // AUTH
 function handleAuth() {
 	//alert('Handle Login');
-	navigator.notification.alert('Handle Auth!');
+	//navigator.notification.alert('Handle Auth!');
 	var form = $("#authForm");   
 	//disable the button so we can't resubmit while we wait
 	$("#authBtn",form).attr("disabled","disabled");
 	var ac = $("#auth", form).val();
-	navigator.notification.alert("AC: "+ac);
+	//navigator.notification.alert("AC: "+ac);
 	if(ac != '') {
 		
-		navigator.notification.alert('Go');
+		//navigator.notification.alert('Go');
         $.post("http://asgt.mocwebservices.co.uk/PG/services/authorise.php", {auth:ac}, function(response) {
-        	navigator.notification.alert(JSON.stringify(response));
+        	//navigator.notification.alert(JSON.stringify(response));
         	
         	var success = response.response;
         	
-        	navigator.notification.alert(success);
+        	//navigator.notification.alert(success);
         	// Set variables
         	
             if(success == 'true') {
-            	navigator.notification.alert("Login Success");
+            	//navigator.notification.alert("Login Success");
 				//store
 				window.localStorage.setItem("ap_auth", ac);
 				window.localStorage.setItem("ap_authorised", true); 
@@ -68,6 +68,8 @@ $("#pages .current").removeClass("current");
 		navigator.notification.alert("You must enter a valid authorisation code.", function() {});
 		$("#authBtn").removeAttr("disabled");
 	}
+	$("#authBtn").removeAttr("disabled");
+	alert('false');
 	return false;
 }
 
