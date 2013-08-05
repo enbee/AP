@@ -84,7 +84,7 @@ function handleLogin() {
 	var p = $("#password", form).val();
 	//navigator.notification.alert("click");
 	if(u != '' && p!= '') {
-		
+		alert(auth);
 		//navigator.notification.alert('Go');
         $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p,auth:auth}, function(response) {
         	/* navigator.notification.alert(JSON.stringify(response)); */
