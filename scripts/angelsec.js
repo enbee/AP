@@ -62,18 +62,13 @@ $().ready(function() {
 			page(nextPage);
 			
 			triggerFormLoading();
-			/*
-$.get(form, function(data) {
+			
+			// LOAD FORM
+			$.get(form, function(data) {
 				triggerFormLoading();
 				$('#form-content').html(data);
 				alert('Load was performed.');
 			});
-*/
-			
-			
-		    
-			
-			// LOAD FORM
 			
 		});
 		
