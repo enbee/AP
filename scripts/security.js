@@ -41,7 +41,7 @@ function handleAuth() {
         	// Set variables
         	
             if(success == 'true') {
-            	//navigator.notification.alert("Login Success");
+            	navigator.notification.alert("Congratulations, authorisation successful. Please login to continue.");
 				//store
 				window.localStorage.setItem("ap_auth", ac);
 				window.localStorage.setItem("ap_authorised", true); 
@@ -69,10 +69,8 @@ $("#pages .current").removeClass("current");
 		$("#authBtn").removeAttr("disabled");
 	}
 	$("#authBtn").removeAttr("disabled");
-	/*
-alert('false');
+	//alert('false');
 	return false;
-*/
 }
 
 
