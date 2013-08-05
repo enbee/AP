@@ -26,7 +26,7 @@ function handleAuth() {
 	var form = $("#authForm");    
 	//disable the button so we can't resubmit while we wait
 	$("#authBtn",form).attr("disabled","disabled");
-	var a = $("auth", form).val();
+	var a = $("#auth", form).val();
 	//navigator.notification.alert("click");
 	if(a != '') {
 		
@@ -83,7 +83,7 @@ function handleLogin() {
 	if(u != '' && p!= '') {
 		
 		//navigator.notification.alert('Go');
-        $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p,auth:a}, function(response) {
+        $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p,auth:auth}, function(response) {
         	/* navigator.notification.alert(JSON.stringify(response)); */
         	
         	var success = response.response;
