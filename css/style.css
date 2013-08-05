@@ -44,6 +44,8 @@ img { border: 0; max-width: 100%; }
 
 #pages #login { padding-top: 50px; }
 
+#form-loading{ display: none; }
+
 /* Update this style */
 /* #pages > div { display: none; position: absolute; top:0; left:0; width:100%; height: 100%; } */
 
