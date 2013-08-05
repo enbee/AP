@@ -23,6 +23,7 @@ function checkPreAuth() {
 // AUTH
 function handleAuth() {
 	//alert('Handle Login');
+	navigator.notification.alert('Handle Auth!');
 	var form = $("#authForm");    
 	//disable the button so we can't resubmit while we wait
 	$("#authBtn",form).attr("disabled","disabled");
