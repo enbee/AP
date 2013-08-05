@@ -23,6 +23,8 @@
 		<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 		<script type="text/javascript" charset="utf-8">
 			// Define Global Variables
+			var authorised = window.localStorage.getItem("ap_authorised");
+			var auth = window.localStorage.getItem("ap_auth");
 			var logged_in = window.localStorage.getItem("ap_logged_in");
 			var currentFormId = null;
 			// CHECK LOCAL STORAGE FOR AUTO-LOGIN
@@ -65,6 +67,27 @@ alert('Logged In = '+logged_in);
 						
 						<!-- Blank Holding page -> to display by default -->
 						<div id="blank" class="current"></div>
+						
+						
+						<!-- Login page -->
+						<div id="authorise">
+							<h2>Authorisation</h2>
+							
+							<p>Please enter your authorisation code to start using this app. If you do not yet have a code, please contact your employer.</p>
+							
+							<form id="authForm">
+								
+								<div id="authDiv" data-role="fieldcontain" class="ui-hide-label">	
+									<input id="auth" name="auth" type="text" placeholder="Authorisation Code" />
+								</div>
+								
+								<div id="submitDiv" data-role="fieldcontain">    
+									<input type="submit" value="Authorise" id="authBtn" data-inline="true"/>
+								</div>
+								
+							</form>
+							
+						</div>
 						
 						<!-- Login page -->
 						<div id="login">

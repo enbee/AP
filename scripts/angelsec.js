@@ -13,14 +13,18 @@ $().ready(function() {
 	document.addEventListener("deviceready", onDeviceReady, false);   
 	function onDeviceReady() {
 	
-		// CHECK USER LOGGED IN			
-		if(logged_in != 'true'|| logged_in == undefined){
-			// Not Logged -> Display Login
-			page('#login');
-		}else{
-			// Logged In Display Splash Page
-			loggedCheck();
-			page('#splash');
+		// CHECK USER LOGGED IN	
+		if(authorised != 'true'|| authorised == undefined){
+			page('#authorise');
+		}else{	
+			if(logged_in != 'true'|| logged_in == undefined){
+				// Not Logged -> Display Login
+				page('#login');
+			}else{
+				// Logged In Display Splash Page
+				loggedCheck();
+				page('#splash');
+			}
 		}
 		
 		// Check Whether Logged As To Display Nav

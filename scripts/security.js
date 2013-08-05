@@ -7,6 +7,7 @@ function init() {
 
 function deviceReady() {
 	//alert('Device Ready');
+	$("#authForm").on('submit',handleAuth);
 	$("#loginForm").on('submit',handleLogin);
 }
 
@@ -19,22 +20,78 @@ function checkPreAuth() {
 	}
 }
 
+// AUTH
+function handleAuth() {
+	//alert('Handle Login');
+	var form = $("#authForm");    
+	//disable the button so we can't resubmit while we wait
+	$("#authBtn",form).attr("disabled","disabled");
+	var a = $("auth", form).val();
+	//navigator.notification.alert("click");
+	if(a != '') {
+		
+		//navigator.notification.alert('Go');
+        $.post("http://asgt.mocwebservices.co.uk/PG/services/authorise.php", {auth:a}, function(response) {
+        	/* navigator.notification.alert(JSON.stringify(response)); */
+        	
+        	var success = response.response;
+        	
+        	//navigator.notification.alert(success);
+        	// Set variables
+        	
+            if(success == 'true') {
+            	//navigator.notification.alert("Login Success");
+				//store
+				window.localStorage.setItem("ap_auth", a);
+				window.localStorage.setItem("ap_authorised", true); 
+				
+				//alert('Switch Pages');
+				//page('#splash');
+				/*
+$("#pages .current").removeClass("current");
+				$("#splash").addClass("current");
+*/
+				$("#pages .current").removeClass("current").toggle('slow', function(){
+					$("#login").addClass("current").toggle('slow');
+				});
+				
+				$("#authBtn").removeAttr("disabled");
+				
+			} else {
+				navigator.notification.alert("Authorisation failed, please try again or contact your employer.", function() {});
+			}
+			$("#authBtn").removeAttr("disabled");
+		},"json");
+	} else {
+		//Thanks Igor!
+		navigator.notification.alert("You must enter a valid authorisation code.", function() {});
+		$("#authBtn").removeAttr("disabled");
+	}
+	return false;
+}
+
+
+// LOGIN
 function handleLogin() {
 	//alert('Handle Login');
 	var form = $("#loginForm");    
 	//disable the button so we can't resubmit while we wait
-	$("#submitButton",form).attr("disabled","disabled");
+	$("#submitBtn",form).attr("disabled","disabled");
 	var u = $("#username", form).val();
 	var p = $("#password", form).val();
 	//navigator.notification.alert("click");
 	if(u != '' && p!= '') {
 		
 		//navigator.notification.alert('Go');
-        $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p}, function(response) {
+        $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p,auth:a}, function(response) {
         	/* navigator.notification.alert(JSON.stringify(response)); */
         	
         	var success = response.response;
-        	navigator.notification.alert(success);
+        	var user_id = response.user_id;
+        	var user = response.user;
+        	var type = response.type;
+        	
+        	//navigator.notification.alert(success);
         	// Set variables
         	
             if(success == 'true') {
@@ -58,16 +115,17 @@ $("#pages .current").removeClass("current");
 				$('#footer h3').hide();
 				$('#tab-bar').show();
 				
+				$("#submitBtn").removeAttr("disabled");
 				
 			} else {
 				navigator.notification.alert("Your login failed", function() {});
 			}
-			$("#submitButton").removeAttr("disabled");
+			$("#submitBtn").removeAttr("disabled");
 		},"json");
 	} else {
 		//Thanks Igor!
 		navigator.notification.alert("You must enter a username and password", function() {});
-		$("#submitButton").removeAttr("disabled");
+		$("#submitBtn").removeAttr("disabled");
 	}
 	return false;
 }
