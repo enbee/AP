@@ -24,15 +24,15 @@ function checkPreAuth() {
 function handleAuth() {
 	//alert('Handle Login');
 	navigator.notification.alert('Handle Auth!');
-	var form = $("#authForm");    
+	var form = $("#authForm");   
 	//disable the button so we can't resubmit while we wait
 	$("#authBtn",form).attr("disabled","disabled");
-	var a = $("#auth", form).val();
-	//navigator.notification.alert("click");
-	if(a != '') {
+	var ac = $("#auth", form).val();
+	navigator.notification.alert("AC: "+ac);
+	if(ac != '') {
 		
-		//navigator.notification.alert('Go');
-        $.post("http://asgt.mocwebservices.co.uk/PG/services/authorise.php", {auth:a}, function(response) {
+		navigator.notification.alert('Go');
+        $.post("http://asgt.mocwebservices.co.uk/PG/services/authorise.php", {auth:ac}, function(response) {
         	navigator.notification.alert(JSON.stringify(response));
         	
         	var success = response.response;
@@ -43,7 +43,7 @@ function handleAuth() {
             if(success == 'true') {
             	navigator.notification.alert("Login Success");
 				//store
-				window.localStorage.setItem("ap_auth", a);
+				window.localStorage.setItem("ap_auth", ac);
 				window.localStorage.setItem("ap_authorised", true); 
 				
 				//alert('Switch Pages');
