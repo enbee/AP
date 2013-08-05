@@ -40,7 +40,7 @@ function handleAuth() {
         	// Set variables
         	
             if(success == 'true') {
-            	//navigator.notification.alert("Login Success");
+            	navigator.notification.alert("Login Success");
 				//store
 				window.localStorage.setItem("ap_auth", a);
 				window.localStorage.setItem("ap_authorised", true); 
