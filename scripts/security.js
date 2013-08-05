@@ -32,11 +32,11 @@ function handleAuth() {
 		
 		//navigator.notification.alert('Go');
         $.post("http://asgt.mocwebservices.co.uk/PG/services/authorise.php", {auth:a}, function(response) {
-        	/* navigator.notification.alert(JSON.stringify(response)); */
+        	navigator.notification.alert(JSON.stringify(response));
         	
         	var success = response.response;
         	
-        	//navigator.notification.alert(success);
+        	navigator.notification.alert(success);
         	// Set variables
         	
             if(success == 'true') {
