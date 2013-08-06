@@ -63,14 +63,16 @@ $().ready(function() {
 			var nextPage = $(e.target.hash);
 			page(nextPage);
 			
-			triggerFormLoading();
+			//triggerFormLoading();
 			
 			// LOAD FORM
-			$.get(form, function(data) {
+			/*
+$.get(form, function(data) {
 				triggerFormLoading();
 				$('#form-content').html(data);
 				alert('Load was performed.');
 			});
+*/
 			
 		});
 		
