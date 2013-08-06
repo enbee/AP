@@ -54,7 +54,7 @@ $().ready(function() {
 			// CALL FORM PAGE
 			alert('Start Load');
 			e.preventDefault();
-			//e.stopImmediatePropagation();
+			e.stopImmediatePropagation();
 			var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
 			var formId  = e.target.id;
 			var form = formLoc + formId + '.html';
