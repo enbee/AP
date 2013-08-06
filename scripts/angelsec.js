@@ -53,8 +53,10 @@ $().ready(function() {
 		$('#form-list a').on('click', function(e){
 			// CALL FORM PAGE
 			alert('Start Load');
-			e.preventDefault();
+			
 			e.stopImmediatePropagation();
+			e.preventDefault();
+			
 			var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
 			var formId  = e.target.id;
 			var form = formLoc + formId + '.html';
