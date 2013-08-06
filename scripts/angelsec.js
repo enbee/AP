@@ -64,8 +64,8 @@ var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
 */
 			
 			//var nextPage = $('#form');
-			var nextPage = $(e.target.hash);
-			page(nextPage);
+			//var nextPage = $(e.target.hash);
+			page('#form');
 			
 			//triggerFormLoading();
 			
