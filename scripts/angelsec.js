@@ -56,7 +56,7 @@ $().ready(function() {
 			
 			e.stopImmediatePropagation();
 			e.preventDefault();
-			
+			resetbutton(this);
 			/*
 var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
 			var formId  = e.target.id;
@@ -137,6 +137,10 @@ var toPage = $(toPage),
 		});
 */
 		
+	}
+	
+	var resetbutton = function(buttonname) {
+		$(buttonname).removeClass("ui-btn-active");
 	}
 
 });
