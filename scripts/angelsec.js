@@ -58,7 +58,7 @@ $().ready(function() {
 			var formId  = e.target.id;
 			var form = formLoc + formId + '.html';
 			
-			var nextPage = $(e.target.hash);
+			var nextPage = $('#form');
 			page(nextPage);
 			
 			triggerFormLoading();
