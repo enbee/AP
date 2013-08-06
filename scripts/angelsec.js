@@ -52,14 +52,16 @@ $().ready(function() {
 		// FORM PAGE CONTOLLER
 		$('#form-list a').on('click', function(e){
 			// CALL FORM PAGE
-			alert('Start Load');
+			/* alert('Start Load'); */
 			
 			e.stopImmediatePropagation();
 			e.preventDefault();
 			
-			var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
+			/*
+var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
 			var formId  = e.target.id;
 			var form = formLoc + formId + '.html';
+*/
 			
 			//var nextPage = $('#form');
 			var nextPage = $(e.target.hash);
