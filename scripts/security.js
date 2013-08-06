@@ -77,14 +77,15 @@ $("#pages .current").removeClass("current");
 // LOGIN
 function handleLogin() {
 	//alert('Handle Login');
-	var form = $("#loginForm");    
+	var form = $("#loginForm");
+	
 	//disable the button so we can't resubmit while we wait
-	$("#submitBtn",form).attr("disabled","disabled");
+	$("#submitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
 	var u = $("#username", form).val();
 	var p = $("#password", form).val();
 	//navigator.notification.alert("click");
 	if(u != '' && p!= '') {
-		alert(auth);
+		//alert(auth);
 		//navigator.notification.alert('Go');
         $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p,auth:auth}, function(response) {
         	/* navigator.notification.alert(JSON.stringify(response)); */

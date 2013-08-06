@@ -45,6 +45,7 @@ $().ready(function() {
 		
 		$('a#logout').on('click', function(e){
 			e.preventDefault();
+			resetbutton(this);
 		    logout();
 		});
 		
@@ -57,26 +58,23 @@ $().ready(function() {
 			e.stopImmediatePropagation();
 			e.preventDefault();
 			resetbutton(this);
-			/*
-var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
+			
+			var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
 			var formId  = e.target.id;
 			var form = formLoc + formId + '.html';
-*/
 			
 			//var nextPage = $('#form');
 			//var nextPage = $(e.target.hash);
 			page('#form');
 			
-			//triggerFormLoading();
+			triggerFormLoading();
 			
 			// LOAD FORM
-			/*
-$.get(form, function(data) {
+			$.get(form, function(data) {
 				triggerFormLoading();
 				$('#form-content').html(data);
 				alert('Load was performed.');
 			});
-*/
 			
 		});
 		
