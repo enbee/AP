@@ -8,9 +8,10 @@
 /* document.addEventListener('DOMContentLoaded', scroll, false); */
 
 // --- JQUERY READY
-$().ready(function() { 	
+$().ready(function() { 
+		
 	// --- CORDOVA READY
-	document.addEventListener("deviceready", onDeviceReady, false);   
+	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
 	
 		// CHECK USER LOGGED IN	
@@ -51,7 +52,7 @@ $().ready(function() {
 		
 		
 		// FORM PAGE CONTOLLER
-		$('#form-list a').on('click', function(e){
+		$('#form-list li a').on('click', function(e){
 			// CALL FORM PAGE
 			/* alert('Start Load'); */
 			
@@ -77,13 +78,13 @@ $().ready(function() {
 			});
 			
 		});
-		
-
 	}
+	
 	
 	function triggerFormLoading(){
 		$('#form-loading').toggle();
 	}
+	
 	
 	function logout(){
 		
@@ -113,27 +114,6 @@ $().ready(function() {
 		fromPage.removeClass("current").toggle('slow', function(){
 			toPage.addClass("current").toggle('slow');
 		});
-		
-		//alert('Go To: '+JSON.stringify(toPage));
-		
-		/*
-toPage.addClass("current fade in").one("webkitAnimationEnd", function(){
-			fromPage.removeClass("current fade out");
-			toPage.removeClass("fade in")
-		});
-		fromPage.addClass("fade out");
-*/
-		
-		/*
-var toPage = $(toPage),
-		fromPage = $("#pages .current");
-		if(toPage.hasClass("current") || toPage === fromPage) {
-			return;
-		};
-		toPage.addClass("current").toggle('slow'), function(){
-			fromPage.removeClass("current").toggle('slow');
-		});
-*/
 		
 	}
 	
