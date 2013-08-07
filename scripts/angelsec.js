@@ -107,6 +107,13 @@ $().ready(function() {
 			}else{
 				// Append to list
 				alert(JSON.stringify(reports));
+				$("#form-list ul").empty();
+				
+				$.each(reports, function(){
+					alert(JSON.stringify(this));
+				});
+				
+				$("#form-list ul")
 			}
         	
 		},"json");
