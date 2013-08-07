@@ -93,7 +93,7 @@ $().ready(function() {
 	
 	
 	function getActiveReports(){
-		alert('Get Report List');
+		//alert('Get Report List');
 		// Call for json response of reports
 		 $.post("http://asgt.mocwebservices.co.uk/PG/services/get-report-list.php", {auth:auth, userID:userID}, function(reports) {
         	//navigator.notification.alert(JSON.stringify(response));
@@ -110,7 +110,7 @@ $().ready(function() {
 				$("#form-list ul").empty();
 				
 				$.each(reports, function(){
-					//alert(JSON.stringify(this));
+					alert(JSON.stringify(this.name));
 					var string = '<li><a href="#form" id="'+this.name+'" class="report-btn" data-icon="plus" data-role="button">'+this.label+'</a></li>';
 					$('#form-list ul').append(string);
 					
