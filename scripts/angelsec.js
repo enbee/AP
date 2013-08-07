@@ -40,7 +40,7 @@ $().ready(function() {
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
 		    var nextPage = $(e.target.hash);
-		    alert('Next Page: '+nextPage);
+		    alert('Next Page: '+e.target.hash);
 		    // Check if reports
 		    if(nextPage == '#reports'){
 			    // Populate Current Report List
