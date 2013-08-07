@@ -40,7 +40,7 @@ $().ready(function() {
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
 		    var nextPage = $(e.target.hash);
-		    
+		    alert('Next Page: '+nextPage);
 		    // Check if reports
 		    if(nextPage == '#reports'){
 			    // Populate Current Report List
@@ -71,7 +71,6 @@ $().ready(function() {
 			var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
 			var formId  = $(this).attr('id');
 			var form = formLoc + formId + '.html';
-			alert(form);
 			//var nextPage = $('#form');
 			//var nextPage = $(e.target.hash);
 			page('#form');
@@ -82,7 +81,6 @@ $().ready(function() {
 			$.get(form, function(data) {
 				triggerFormLoading();
 				$('#form-content').html(data);
-				alert('Load was performed.');
 			});
 			
 		});
