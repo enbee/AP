@@ -45,7 +45,7 @@ $().ready(function() {
 		    if(e.target.hash == '#reports'){
 			    // Populate Current Report List
 			    alert('call function!');
-			    getReportList();
+			    getActiveReports();
 		    }
 		    
 			page(nextPage);
