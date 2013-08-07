@@ -110,7 +110,7 @@ $().ready(function() {
 				$("#form-list ul").empty();
 				
 				$.each(reports, function(){
-					alert(JSON.stringify(this));
+					//alert(JSON.stringify(this));
 					var string = '<li><a href="#form" id="'+this.name+'" class="report-btn" data-icon="plus" data-role="button">'+this.label+'</a></li>';
 					$('#form-list ul').append(string);
 					
