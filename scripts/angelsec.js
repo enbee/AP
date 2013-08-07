@@ -45,6 +45,7 @@ $().ready(function() {
 		    if(e.target.hash == '#reports'){
 			    // Populate Current Report List
 			    //alert('call function!');
+			    $("ul#form-list").empty();
 			    getActiveReports();
 		    }
 		    
@@ -107,7 +108,6 @@ $().ready(function() {
 			}else{
 				// Append to list
 				//alert(JSON.stringify(reports));
-				$("#form-list ul").empty();
 				
 				$.each(reports, function(){
 					
