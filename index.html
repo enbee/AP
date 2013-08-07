@@ -25,6 +25,7 @@
 			// Define Global Variables
 			var authorised = window.localStorage.getItem("ap_authorised");
 			var auth = window.localStorage.getItem("ap_auth");
+			var userID = window.localStorage.getItem("ap_userID");
 			var logged_in = window.localStorage.getItem("ap_logged_in");
 			var currentFormId = null;
 			// CHECK LOCAL STORAGE FOR AUTO-LOGIN
@@ -56,7 +57,12 @@ alert('Logged In = '+logged_in);
 		<div data-role="page" data-theme="a">
 		
 			<div id="header" data-role="header" data-position="fixed">
+				<!-- <span><a href="#settings" ></a></span> -->
 				<h1>Angel Patrol</h1>
+				<!-- <a href="#options" data-icon="gear" class="ui-btn-right" data-mini="true">Options</a> -->
+				<!-- <span><p id="form-loading"><img src="css/images/ajax-loader.gif" /></p></span> -->
+				
+				
 			</div><!-- /header -->
 			
 			<div id="wrapper">

@@ -36,7 +36,7 @@ function handleAuth() {
         	//navigator.notification.alert(JSON.stringify(response));
         	
         	var success = response.response;
-        	
+        	var userID = response.user_id;
         	//navigator.notification.alert(success);
         	// Set variables
         	
@@ -44,6 +44,7 @@ function handleAuth() {
             	navigator.notification.alert("Congratulations, authorisation successful. Please login to continue.");
 				//store
 				window.localStorage.setItem("ap_auth", ac);
+				window.localStorage.setItem("ap_user_id", userID);
 				window.localStorage.setItem("ap_authorised", true); 
 				
 				//alert('Switch Pages');

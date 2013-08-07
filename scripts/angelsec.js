@@ -40,6 +40,13 @@ $().ready(function() {
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
 		    var nextPage = $(e.target.hash);
+		    
+		    // Check if reports
+		    if(nextPage == '#reports'){
+			    // Populate Current Report List
+			    getReportList();
+		    }
+		    
 			page(nextPage);
 		});
 		
@@ -83,6 +90,29 @@ $().ready(function() {
 	
 	function triggerFormLoading(){
 		$('#form-loading').toggle();
+	}
+	
+	
+	function getActiveReports(){
+		
+		// Call for json response of reports
+		 $.post("http://asgt.mocwebservices.co.uk/PG/services/get-report-list.php", {auth:auth, userID:userID}, function(reports) {
+        	//navigator.notification.alert(JSON.stringify(response));
+        	
+        	/* var success = response.response; */
+        	
+        	// If reports .. display list
+			if(reports.length == 0){
+				// No results
+				alert('No results');
+			}else{
+				// Append to list
+				alert(JSON.stringify(reports));
+			}
+        	
+		},"json");
+		
+		return false;
 	}
 	
 	
