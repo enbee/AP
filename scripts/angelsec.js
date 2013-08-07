@@ -44,6 +44,7 @@ $().ready(function() {
 		    // Check if reports
 		    if(nextPage == '#reports'){
 			    // Populate Current Report List
+			    alert('call function!');
 			    getReportList();
 		    }
 		    
@@ -94,7 +95,7 @@ $().ready(function() {
 	
 	
 	function getActiveReports(){
-		
+		alert('Get Report List');
 		// Call for json response of reports
 		 $.post("http://asgt.mocwebservices.co.uk/PG/services/get-report-list.php", {auth:auth, userID:userID}, function(reports) {
         	//navigator.notification.alert(JSON.stringify(response));
