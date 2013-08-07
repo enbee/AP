@@ -113,7 +113,7 @@ $().ready(function() {
 					
 					var string = '<li><a href="#form" id="'+this.name+'" class="report-btn" data-icon="plus" data-role="button">'+this.label+'</a></li>';
 					alert(string);
-					$('#form-list ul').append(string);
+					$('ul#form-list').append(string);
 					
 				});
 				
