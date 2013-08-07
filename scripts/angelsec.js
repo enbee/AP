@@ -61,7 +61,7 @@ $().ready(function() {
 			resetbutton(this);
 			
 			var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
-			var formId  = e.target.id;
+			var formId  = $(this).attr('id');
 			var form = formLoc + formId + '.html';
 			alert(form);
 			//var nextPage = $('#form');
