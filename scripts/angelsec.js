@@ -115,18 +115,16 @@ $().ready(function() {
 					var r_name = this.name;
 					var r_label = this.label;
 					//alert(string);
-					/*
-$('ul#form-list').append($('<li/>', {   
+					$('ul#form-list').append($('<li/>', {   
 					    'data-role': "button"
 					}).append($('<a/>', {    
 					    'href': '#form',
-					    'id': r_name,
+					    'id': 'hello',
 					    'class': 'report-btn'
-					    'text': r_label
+					    'text': 'press me'
 					})));
 					
 					$('ul#form-list').listview('refresh');
-*/
 					//$('ul#form-list').append(string);
 					
 					
