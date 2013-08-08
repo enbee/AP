@@ -129,12 +129,12 @@ $('ul#form-list').append($('<li/>', {
 */
 					
 					
-					$('ul#form-list').append(string).listview('refresh');
+					$('#form-list').append(string);
 					//$('ul#form-list').listview('refresh');
 					
 					
 				});
-				
+				$('#form-list').listview('refresh');
 				//$("#form-list ul li a").attr("data-role", "button").attr("data-icon", "plus");
 			}
         	
