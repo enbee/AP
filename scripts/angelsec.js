@@ -111,9 +111,19 @@ $().ready(function() {
 				
 				$.each(reports, function(){
 					
-					var string = '<li><a href="#form" id="'+this.name+'" class="report-btn">'+this.label+'</a></li>';
-					alert(string);
-					$('ul#form-list').append(string);
+					//var string = '<li><a href="#form" id="'+this.name+'" class="report-btn">'+this.label+'</a></li>';
+					//alert(string);
+					$('ul#form-list').append($('<li/>', {    //here appending `<li>`
+					    'data-role': "button"
+					}).append($('<a/>', {    //here appending `<a>` into `<li>`
+					    'href': '#form',
+					    'id': this.name,
+					    'class': 'report-btn'
+					    'text': this.label
+					})));
+					
+					$('ul#form-list').listview('refresh');
+					//$('ul#form-list').append(string);
 					
 					
 				});
