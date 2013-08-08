@@ -108,7 +108,7 @@ $().ready(function() {
 			}else{
 				// Append to list
 				//alert(JSON.stringify(reports));
-				
+				$('#form-list').trigger('create');
 				$.each(reports, function(){
 					
 					var string = '<li><a href="#form" id="'+this.name+'" class="report-btn" data-icon="plus" data-role="button">'+this.label+'</a></li>';
