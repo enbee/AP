@@ -108,10 +108,10 @@ $().ready(function() {
 			}else{
 				// Append to list
 				//alert(JSON.stringify(reports));
-				$('#form-list').listview();
+				//$('#form-list').listview();
 				$.each(reports, function(){
 					
-					var string = '<li><a href="#form" id="'+this.name+'" class="report-btn" data-icon="plus" data-role="button">'+this.label+'</a></li>';
+					var string = '<a href="#form" id="'+this.name+'" class="report-btn" data-icon="plus" data-role="button">'+this.label+'</a>';
 									
 					
 					$('#form-list').append(string);
@@ -119,7 +119,7 @@ $().ready(function() {
 					
 					
 				});
-				$('#form-list').listview('refresh');
+				//$('#form-list').listview('refresh');
 				//$("#form-list ul li a").attr("data-role", "button").attr("data-icon", "plus");
 			}
         	
