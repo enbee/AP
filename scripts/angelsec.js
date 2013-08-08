@@ -115,9 +115,10 @@ $().ready(function() {
 					alert(string);
 					$('ul#form-list').append(string);
 					
+					
 				});
 				
-				$("#form-list ul")
+				//$("#form-list ul li a").attr("data-role", "button").attr("data-icon", "plus");
 			}
         	
 		},"json");
