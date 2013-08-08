@@ -112,17 +112,19 @@ $().ready(function() {
 				$.each(reports, function(){
 					
 					//var string = '<li><a href="#form" id="'+this.name+'" class="report-btn">'+this.label+'</a></li>';
+					var r_name = this.name;
+					var r_label = this.label;
 					//alert(string);
-					$('ul#form-list').append($('<li/>', {    //here appending `<li>`
+					$('ul#form-list').append($('<li/>', {   
 					    'data-role': "button"
-					}).append($('<a/>', {    //here appending `<a>` into `<li>`
+					}).append($('<a/>', {    
 					    'href': '#form',
-					    'id': this.name,
+					    'id': r_name,
 					    'class': 'report-btn'
-					    'text': this.label
+					    'text': r_label
 					})));
 					
-					//$('ul#form-list').listview('refresh');
+					$('ul#form-list').listview('refresh');
 					//$('ul#form-list').append(string);
 					
 					
