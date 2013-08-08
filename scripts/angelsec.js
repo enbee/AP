@@ -61,7 +61,7 @@ $().ready(function() {
 		
 		
 		// FORM PAGE CONTOLLER
-		$('#wrapper').on('click', '#form-list a', function(e){
+		$('#form-list').on('click', 'a', function(e){
 			// CALL FORM PAGE
 			alert('Start Load');
 			
@@ -114,7 +114,7 @@ $().ready(function() {
 					var string = '<a href="#form" id="'+this.name+'" class="report-btn" data-icon="plus" data-role="button">'+this.label+'</a>';
 									
 					
-					$('#form-list').append(string);
+					$('#form-list').append(string).trigger("create");
 					//$('ul#form-list').listview('refresh');
 					
 					
