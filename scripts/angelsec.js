@@ -122,7 +122,7 @@ $().ready(function() {
 					    'text': this.label
 					})));
 					
-					$('ul#form-list').listview('refresh');
+					//$('ul#form-list').listview('refresh');
 					//$('ul#form-list').append(string);
 					
 					
