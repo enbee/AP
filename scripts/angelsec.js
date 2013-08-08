@@ -111,7 +111,8 @@ $().ready(function() {
 				
 				$.each(reports, function(){
 					
-					var string = '<li><a href="#form" id="'+this.name+'" class="report-btn">'+this.label+'</a></li>';
+					var string = '<li><a href="#form" id="'+this.name+'" class="report-btn" data-icon="plus" data-role="button">'+this.label+'</a></li>';
+					
 					/*
 var r_name = this.name;
 					var r_label = this.label;
