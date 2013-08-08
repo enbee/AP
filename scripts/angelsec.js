@@ -61,7 +61,7 @@ $().ready(function() {
 		
 		
 		// FORM PAGE CONTOLLER
-		$('#form-list a').on('click', function(e){
+		$('#wrapper').on('click', '#form-list a', function(e){
 			// CALL FORM PAGE
 			alert('Start Load');
 			
