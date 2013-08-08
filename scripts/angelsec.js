@@ -115,7 +115,8 @@ $().ready(function() {
 					var r_name = this.name;
 					var r_label = this.label;
 					//alert(string);
-					$('ul#form-list').append($('<li/>', {   
+					/*
+$('ul#form-list').append($('<li/>', {   
 					    'data-role': "button"
 					}).append($('<a/>', {    
 					    'href': '#form',
@@ -125,6 +126,7 @@ $().ready(function() {
 					})));
 					
 					$('ul#form-list').listview('refresh');
+*/
 					//$('ul#form-list').append(string);
 					
 					
