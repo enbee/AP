@@ -129,7 +129,7 @@ $('ul#form-list').append($('<li/>', {
 */
 					
 					
-					$('ul#form-list').append(string).listview('refresh');;
+					$('ul#form-list').append(string).listview('refresh');
 					//$('ul#form-list').listview('refresh');
 					
 					
