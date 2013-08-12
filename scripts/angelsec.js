@@ -78,7 +78,9 @@ $().ready(function() {
 			var form = formLoc + formId + '.html';
 			//var nextPage = $('#form');
 			//var nextPage = $(e.target.hash);
-			page('#form');
+			var nextPage = e.target.hash;
+			page(nextPage);
+			//page('#form');
 			
 			triggerFormLoading();
 			
@@ -93,6 +95,7 @@ $().ready(function() {
 	
 	
 	function triggerFormLoading(){
+		alert('Toggle Form Load');
 		$('#form-loading').toggle();
 	}
 	
@@ -179,6 +182,8 @@ $().ready(function() {
 	function onGpsSuccess(position) {
 		window.localStorage.setItem("ap_lat", position.coords.latitude);
 		window.localStorage.setItem("ap_lng", position.coords.longitude);
+		
+		alert('Lat: '+lat+' // Lng: '+lng);
 		/*
 alert('Latitude: '           + position.coords.latitude              + '<br />' +
                         'Longitude: '          + position.coords.longitude             + '<br />' +
