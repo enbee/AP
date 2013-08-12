@@ -90,7 +90,7 @@ function handleLogin() {
 		//alert(auth);
 		//navigator.notification.alert('Go');
         $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p,auth:auth}, function(response) {
-        	/* navigator.notification.alert(JSON.stringify(response)); */
+        	navigator.notification.alert(JSON.stringify(response));
         	
         	var success = response.response;
         	var user_id = response.user_id;
@@ -112,7 +112,7 @@ function handleLogin() {
 				window.localStorage.setItem("ap_processPath", processPath);
 				
 				
-				alert('Form: '+formPath+'/n Process: '+processPath);
+				//alert('Form: '+formPath+'/n Process: '+processPath);
 				
 				/*
 formPath = window.localStorage.getItem("ap_formPath");
