@@ -73,9 +73,10 @@ $().ready(function() {
 			e.preventDefault();
 			resetbutton(this);
 			
-			var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
+			//var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
 			var formId  = $(this).attr('id');
-			var form = formLoc + formId + '.html';
+			var form = formPath + formId + '.html';
+			/* var form = formLoc + formId + '.html'; */
 			//var nextPage = $('#form');
 			//var nextPage = $(e.target.hash);
 			//var nextPage = e.target.hash;
@@ -160,10 +161,10 @@ $().ready(function() {
 	
 	function page(toPage) {
 	
-		alert('P. Form: '+formPath+'/n Process: '+processPath);
+		//alert('P. Form: '+formPath+'/n Process: '+processPath);
 		// Update GPS On page change
 		
-		alert('Lat: '+lat+' // Lng: '+lng);
+		//alert('Lat: '+lat+' // Lng: '+lng);
 		
 		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		
