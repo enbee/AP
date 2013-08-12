@@ -17,11 +17,9 @@ $().ready(function() {
 		// Get initial GPS
 		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		
-		/*
-function onGpsSuccess(position) {
+		function onGpsSuccess(position) {
 			window.localStorage.setItem("ap_lat", position.coords.latitude);
 			window.localStorage.setItem("ap_lng", position.coords.longitude);
-*/
 			/*
 alert('Latitude: '           + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />' +
@@ -32,22 +30,20 @@ alert('Latitude: '           + position.coords.latitude              + '<br />' 
                             'Speed: '              + position.coords.speed                 + '<br />' +
                             'Timestamp: '          + new Date(position.timestamp)          + '<br />');
 */
-/* 		} */
+		}
 		
 		
-/* 		function onGpsError(error) { */
+		function onGpsError(error) {
 			/*
 alert('code: '    + error.code    + '\n' +
-              'message: ' + error.message + '\n');
-*/			
-			/*
-if (localStorage.getItem("infiniteScrollEnabled") === null) {
+              'message: ' + error.message + '\n');	
+*/		
+			if (localStorage.getItem("infiniteScrollEnabled") === null) {
 				window.localStorage.setItem("ap_lat", '0');
 				window.localStorage.setItem("ap_lng", '0');
   			}
 		}
 		
-*/
 		
 		
 		// CHECK USER LOGGED IN	
