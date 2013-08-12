@@ -15,8 +15,8 @@ $().ready(function() {
 	function onDeviceReady() {
 		
 		// Get initial GPS
-		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
-		
+		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		var watchId = navigator.geolocation.watchPosition(onGpsSuccess, onGpsError);
 		
 		// --- CHECK USER LOGGED IN	-----
 		if(authorised != 'true'|| authorised == undefined){
@@ -67,7 +67,7 @@ $().ready(function() {
 		// FORM PAGE CONTOLLER
 		$('#form-list').on('click', 'a', function(e){
 			// CALL FORM PAGE
-			alert('Start Load');
+			//alert('Start Load');
 			
 			e.stopImmediatePropagation();
 			e.preventDefault();
@@ -95,7 +95,7 @@ $().ready(function() {
 	
 	
 	function triggerFormLoading(){
-		alert('Toggle Form Load');
+		//alert('Toggle Form Load');
 		$('#form-loading').toggle();
 	}
 	
@@ -162,6 +162,8 @@ $().ready(function() {
 		//alert('Form: '+formPath+'/n Process: '+processPath);
 		// Update GPS On page change
 		
+		alert('Lat: '+lat+' // Lng: '+lng);
+		
 		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		
 		var toPage = $(toPage),
@@ -183,7 +185,7 @@ $().ready(function() {
 		window.localStorage.setItem("ap_lat", position.coords.latitude);
 		window.localStorage.setItem("ap_lng", position.coords.longitude);
 		
-		alert('Lat: '+lat+' // Lng: '+lng);
+		//alert('Lat: '+lat+' // Lng: '+lng);
 		/*
 alert('Latitude: '           + position.coords.latitude              + '<br />' +
                         'Longitude: '          + position.coords.longitude             + '<br />' +
