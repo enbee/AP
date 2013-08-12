@@ -15,11 +15,13 @@ $().ready(function() {
 	function onDeviceReady() {
 		
 		// Get initial GPS
-		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		
-		function onGpsSuccess(position) {
+		/*
+function onGpsSuccess(position) {
 			window.localStorage.setItem("ap_lat", position.coords.latitude);
 			window.localStorage.setItem("ap_lng", position.coords.longitude);
+*/
 			/*
 alert('Latitude: '           + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />' +
@@ -30,20 +32,22 @@ alert('Latitude: '           + position.coords.latitude              + '<br />' 
                             'Speed: '              + position.coords.speed                 + '<br />' +
                             'Timestamp: '          + new Date(position.timestamp)          + '<br />');
 */
-		}
+/* 		} */
 		
 		
-		function onGpsError(error) {
+/* 		function onGpsError(error) { */
 			/*
 alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
 */			
-			if (localStorage.getItem("infiniteScrollEnabled") === null) {
+			/*
+if (localStorage.getItem("infiniteScrollEnabled") === null) {
 				window.localStorage.setItem("ap_lat", '0');
 				window.localStorage.setItem("ap_lng", '0');
   			}
 		}
 		
+*/
 		
 		
 		// CHECK USER LOGGED IN	
@@ -185,7 +189,7 @@ alert('code: '    + error.code    + '\n' +
 	
 		//alert('Form: '+formPath+'/n Process: '+processPath);
 		// Update GPS On page change
-		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		var toPage = $(toPage),
 		fromPage = $("#pages .current");
 				
