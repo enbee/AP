@@ -185,7 +185,7 @@ alert('code: '    + error.code    + '\n' +
 	
 		//alert('Form: '+formPath+'/n Process: '+processPath);
 		// Update GPS On page change
-		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		var toPage = $(toPage),
 		fromPage = $("#pages .current");
 				
