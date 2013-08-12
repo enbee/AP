@@ -111,6 +111,9 @@ function handleLogin() {
 				window.localStorage.setItem("ap_formPath", formPath);
 				window.localStorage.setItem("ap_processPath", processPath);
 				
+				formPath = window.localStorage.getItem("ap_formPath");
+				processPath = window.localStorage.getItem("ap_processPath");
+				
 				//alert('Switch Pages');
 				//page('#splash');
 				/*
