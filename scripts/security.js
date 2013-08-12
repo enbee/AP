@@ -96,8 +96,8 @@ function handleLogin() {
         	var user_id = response.user_id;
         	var user = response.user;
         	var type = response.type;
-        	var formPath = response.formPath;
-        	var processPath = response.processPath;
+        	formPath = response.formPath;
+        	processPath = response.processPath;
         	
         	//navigator.notification.alert(success);
         	// Set variables
