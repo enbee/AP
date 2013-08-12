@@ -14,11 +14,14 @@ $().ready(function() {
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
 		
-		// Get GPS
+		// Get initial GPS
 		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		
 		function onGpsSuccess(position) {
-			alert('Latitude: '           + position.coords.latitude              + '<br />' +
+			window.localStorage.setItem("ap_lat", position.coords.latitude);
+			window.localStorage.setItem("ap_lng", position.coords.longitude);
+			/*
+alert('Latitude: '           + position.coords.latitude              + '<br />' +
                             'Longitude: '          + position.coords.longitude             + '<br />' +
                             'Altitude: '           + position.coords.altitude              + '<br />' +
                             'Accuracy: '           + position.coords.accuracy              + '<br />' +
@@ -26,12 +29,19 @@ $().ready(function() {
                             'Heading: '            + position.coords.heading               + '<br />' +
                             'Speed: '              + position.coords.speed                 + '<br />' +
                             'Timestamp: '          + new Date(position.timestamp)          + '<br />');
+*/
 		}
 		
 		
 		function onGpsError(error) {
-			alert('code: '    + error.code    + '\n' +
+			/*
+alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
+*/			
+			if (localStorage.getItem("infiniteScrollEnabled") === null) {
+				window.localStorage.setItem("ap_lat", '0');
+				window.localStorage.setItem("ap_lng", '0');
+  			}
 		}
 		
 		
@@ -153,6 +163,9 @@ $().ready(function() {
 	
 	function logout(){
 		
+		
+		window.localStorage.removeItem("ap_lat");
+		window.localStorage.removeItem("ap_lng");
 		window.localStorage.removeItem("ap_username");
 		window.localStorage.removeItem("ap_password");
 		window.localStorage.setItem("ap_logged_in", false); 
@@ -170,6 +183,9 @@ $().ready(function() {
 	
 	function page(toPage) {
 	
+		alert('Form: '+formPath+'/n Process: '+processPath);
+		// Update GPS On page change
+		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		var toPage = $(toPage),
 		fromPage = $("#pages .current");
 				
