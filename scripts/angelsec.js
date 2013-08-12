@@ -16,7 +16,7 @@ $().ready(function() {
 		
 		// Get initial GPS
 		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
-		var watchId = navigator.geolocation.watchPosition(onGpsSuccess, onGpsError);
+		var watchId = navigator.geolocation.watchPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
 		
 		// --- CHECK USER LOGGED IN	-----
 		if(authorised != 'true'|| authorised == undefined){
@@ -79,8 +79,9 @@ $().ready(function() {
 			//var nextPage = $('#form');
 			//var nextPage = $(e.target.hash);
 			var nextPage = e.target.hash;
-			page(nextPage);
-			//page('#form');
+			alert(nextPage);
+			//page(nextPage);
+			page('#form');
 			
 			triggerFormLoading();
 			
@@ -162,7 +163,7 @@ $().ready(function() {
 		//alert('Form: '+formPath+'/n Process: '+processPath);
 		// Update GPS On page change
 		
-		alert('Lat: '+lat+' // Lng: '+lng);
+		//alert('Lat: '+lat+' // Lng: '+lng);
 		
 		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		
@@ -204,10 +205,9 @@ alert('Latitude: '           + position.coords.latitude              + '<br />' 
 alert('code: '    + error.code    + '\n' +
           'message: ' + error.message + '\n');	
 */		
-		if (localStorage.getItem("infiniteScrollEnabled") === null) {
-			window.localStorage.setItem("ap_lat", '0');
-			window.localStorage.setItem("ap_lng", '0');
-			}
+		
+		window.localStorage.setItem("ap_lat", '0');
+		window.localStorage.setItem("ap_lng", '0');
 	}
 	
 	
