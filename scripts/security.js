@@ -37,6 +37,7 @@ function handleAuth() {
         	
         	var success = response.response;
         	var userID = response.user_id;
+        	
         	//navigator.notification.alert(success);
         	// Set variables
         	
@@ -45,7 +46,7 @@ function handleAuth() {
 				//store
 				window.localStorage.setItem("ap_auth", ac);
 				window.localStorage.setItem("ap_user_id", userID);
-				window.localStorage.setItem("ap_authorised", true); 
+				window.localStorage.setItem("ap_authorised", true);
 				
 				//alert('Switch Pages');
 				//page('#splash');
@@ -95,6 +96,8 @@ function handleLogin() {
         	var user_id = response.user_id;
         	var user = response.user;
         	var type = response.type;
+        	var formPath = response.form_path;
+        	var processPath = response.process_path;
         	
         	//navigator.notification.alert(success);
         	// Set variables
@@ -105,6 +108,8 @@ function handleLogin() {
 				window.localStorage.setItem("ap_username", u);
 				window.localStorage.setItem("ap_password", p); 
 				window.localStorage.setItem("ap_logged_in", true); 
+				window.localStorage.setItem("ap_formPath", formPath);
+				window.localStorage.setItem("ap_processPath", processPath);
 				
 				//alert('Switch Pages');
 				//page('#splash');
