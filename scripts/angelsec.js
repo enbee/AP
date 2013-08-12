@@ -17,36 +17,8 @@ $().ready(function() {
 		// Get initial GPS
 		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		
-		function onGpsSuccess(position) {
-			window.localStorage.setItem("ap_lat", position.coords.latitude);
-			window.localStorage.setItem("ap_lng", position.coords.longitude);
-			/*
-alert('Latitude: '           + position.coords.latitude              + '<br />' +
-                            'Longitude: '          + position.coords.longitude             + '<br />' +
-                            'Altitude: '           + position.coords.altitude              + '<br />' +
-                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
-                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-                            'Heading: '            + position.coords.heading               + '<br />' +
-                            'Speed: '              + position.coords.speed                 + '<br />' +
-                            'Timestamp: '          + new Date(position.timestamp)          + '<br />');
-*/
-		}
 		
-		
-		function onGpsError(error) {
-			/*
-alert('code: '    + error.code    + '\n' +
-              'message: ' + error.message + '\n');	
-*/		
-			if (localStorage.getItem("infiniteScrollEnabled") === null) {
-				window.localStorage.setItem("ap_lat", '0');
-				window.localStorage.setItem("ap_lng", '0');
-  			}
-		}
-		
-		
-		
-		// CHECK USER LOGGED IN	
+		// --- CHECK USER LOGGED IN	-----
 		if(authorised != 'true'|| authorised == undefined){
 			page('#authorise');
 		}else{	
@@ -180,12 +152,15 @@ alert('code: '    + error.code    + '\n' +
 		
 	}
 	
+	// --- PAGE SWITCHER ----
 	
 	function page(toPage) {
 	
 		//alert('Form: '+formPath+'/n Process: '+processPath);
 		// Update GPS On page change
-		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		
+		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		
 		var toPage = $(toPage),
 		fromPage = $("#pages .current");
 				
@@ -197,6 +172,39 @@ alert('code: '    + error.code    + '\n' +
 		});
 		
 	}
+	
+	
+	// --- GPS RESPONSE FUNCTIONS ---
+	
+	function onGpsSuccess(position) {
+		window.localStorage.setItem("ap_lat", position.coords.latitude);
+		window.localStorage.setItem("ap_lng", position.coords.longitude);
+		/*
+alert('Latitude: '           + position.coords.latitude              + '<br />' +
+                        'Longitude: '          + position.coords.longitude             + '<br />' +
+                        'Altitude: '           + position.coords.altitude              + '<br />' +
+                        'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                        'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                        'Heading: '            + position.coords.heading               + '<br />' +
+                        'Speed: '              + position.coords.speed                 + '<br />' +
+                        'Timestamp: '          + new Date(position.timestamp)          + '<br />');
+*/
+	}
+	
+	
+	function onGpsError(error) {
+		/*
+alert('code: '    + error.code    + '\n' +
+          'message: ' + error.message + '\n');	
+*/		
+		if (localStorage.getItem("infiniteScrollEnabled") === null) {
+			window.localStorage.setItem("ap_lat", '0');
+			window.localStorage.setItem("ap_lng", '0');
+			}
+	}
+	
+	
+	// --- RESET BUTTONS
 	
 	var resetbutton = function(buttonname) {
 		$(buttonname).removeClass("ui-btn-active");
