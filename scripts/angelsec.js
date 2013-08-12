@@ -78,8 +78,8 @@ $().ready(function() {
 			var form = formLoc + formId + '.html';
 			//var nextPage = $('#form');
 			//var nextPage = $(e.target.hash);
-			var nextPage = e.target.hash;
-			alert(nextPage);
+			//var nextPage = e.target.hash;
+			//alert(nextPage);
 			//page(nextPage);
 			page('#form');
 			
@@ -160,12 +160,12 @@ $().ready(function() {
 	
 	function page(toPage) {
 	
-		//alert('Form: '+formPath+'/n Process: '+processPath);
+		alert('Form: '+formPath+'/n Process: '+processPath);
 		// Update GPS On page change
 		
-		//alert('Lat: '+lat+' // Lng: '+lng);
+		alert('Lat: '+lat+' // Lng: '+lng);
 		
-		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		
 		var toPage = $(toPage),
 		fromPage = $("#pages .current");
@@ -183,8 +183,14 @@ $().ready(function() {
 	// --- GPS RESPONSE FUNCTIONS ---
 	
 	function onGpsSuccess(position) {
+		
+		// UPDATE LOCAL STORAGE
 		window.localStorage.setItem("ap_lat", position.coords.latitude);
 		window.localStorage.setItem("ap_lng", position.coords.longitude);
+		
+		// UPDATE VARS
+		lat = window.localStorage.getItem("ap_lat");
+		lng = window.localStorage.getItem("ap_lng");
 		
 		//alert('Lat: '+lat+' // Lng: '+lng);
 		/*

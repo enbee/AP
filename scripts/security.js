@@ -108,8 +108,8 @@ function handleLogin() {
 				window.localStorage.setItem("ap_username", u);
 				window.localStorage.setItem("ap_password", p); 
 				window.localStorage.setItem("ap_logged_in", true); 
-				//window.localStorage.setItem("ap_formPath", formPath);
-				//window.localStorage.setItem("ap_processPath", processPath);
+				window.localStorage.setItem("ap_formPath", formPath);
+				window.localStorage.setItem("ap_processPath", processPath);
 				
 				//alert('Switch Pages');
 				//page('#splash');
