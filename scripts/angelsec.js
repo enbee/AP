@@ -81,7 +81,7 @@ if (localStorage.getItem("infiniteScrollEnabled") === null) {
 		    if(e.target.hash == '#reports'){
 			    // Populate Current Report List
 			    //alert('call function!');
-			    $("ul#form-list").empty();
+			    $("#form-list").empty();
 			    getActiveReports();
 		    }
 		    
@@ -140,7 +140,7 @@ if (localStorage.getItem("infiniteScrollEnabled") === null) {
         	// If reports .. display list
 			if(reports.length == 0){
 				// No results
-				// alert('No results');
+				alert('No results');
 			}else{
 				// Append to list
 				//alert(JSON.stringify(reports));
