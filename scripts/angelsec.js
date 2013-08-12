@@ -183,7 +183,7 @@ alert('code: '    + error.code    + '\n' +
 	
 	function page(toPage) {
 	
-		alert('Form: '+formPath+'/n Process: '+processPath);
+		//alert('Form: '+formPath+'/n Process: '+processPath);
 		// Update GPS On page change
 		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		var toPage = $(toPage),

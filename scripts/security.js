@@ -96,8 +96,8 @@ function handleLogin() {
         	var user_id = response.user_id;
         	var user = response.user;
         	var type = response.type;
-        	var formPath = response.form_path;
-        	var processPath = response.process_path;
+        	//var formPath = response.form_path;
+        	//var processPath = response.process_path;
         	
         	//navigator.notification.alert(success);
         	// Set variables
@@ -108,8 +108,8 @@ function handleLogin() {
 				window.localStorage.setItem("ap_username", u);
 				window.localStorage.setItem("ap_password", p); 
 				window.localStorage.setItem("ap_logged_in", true); 
-				window.localStorage.setItem("ap_formPath", formPath);
-				window.localStorage.setItem("ap_processPath", processPath);
+				//window.localStorage.setItem("ap_formPath", formPath);
+				//window.localStorage.setItem("ap_processPath", processPath);
 				
 				//alert('Switch Pages');
 				//page('#splash');
