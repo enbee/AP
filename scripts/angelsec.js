@@ -15,7 +15,7 @@ $().ready(function() {
 	function onDeviceReady() {
 		
 		// Get initial GPS
-		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		
 		function onGpsSuccess(position) {
 			window.localStorage.setItem("ap_lat", position.coords.latitude);
@@ -185,7 +185,7 @@ alert('code: '    + error.code    + '\n' +
 	
 		//alert('Form: '+formPath+'/n Process: '+processPath);
 		// Update GPS On page change
-		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		var toPage = $(toPage),
 		fromPage = $("#pages .current");
 				
