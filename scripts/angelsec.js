@@ -103,6 +103,8 @@ e.preventDefault();
 			e.stopPropagation();
 */
 			alert('hello');
+			
+			return false;
 		});
 	}
 	
