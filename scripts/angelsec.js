@@ -89,7 +89,7 @@ $().ready(function() {
 			// LOAD FORM
 			$.get(form, function(data) {
 				triggerFormLoading();
-				$('#form-content').html(data);
+				$('#form-content').html(data).trigger("create");
 			});
 			
 		});
