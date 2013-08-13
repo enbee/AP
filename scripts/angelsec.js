@@ -98,6 +98,8 @@ $().ready(function() {
 		// Listen for onSubmit report
 		/* $("#reportForm").on('submit',handleReport); */
 		$("#reportForm").on('submit',function(e){
+			e.preventDefault();
+			e.stopPropagation();
 			alert('hello');
 		});
 	}
@@ -190,6 +192,7 @@ $().ready(function() {
 	
 	// ON FORM SUBMIT FUNCTION
 	function handleReport() {
+		
 		alert('Form Submit');
 		/*
 var form = $("#reportForm");
