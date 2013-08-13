@@ -48,9 +48,10 @@ img { border: 0; max-width: 100%; }
 
 
 /* FORM STYLING */
+.ui-field-contain label{ display: block; width: 100%; }
 
-.ui-field-contain{ margin-bottom: 15px; }
-.ui-field-contain label{ width: 100%; }
+#form-content .ui-field-contain{ margin-bottom: 30px !important; }
+#form-content .ui-field-contain textarea.ui-input-text{ height: 250px; }
 
 
 /* Update this style */
