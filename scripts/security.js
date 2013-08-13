@@ -9,6 +9,7 @@ function deviceReady() {
 	//alert('Device Ready');
 	$("#authForm").on('submit',handleAuth);
 	$("#loginForm").on('submit',handleLogin);
+	$("#reportForm").on('submit',handleReport);
 }
 
 function checkPreAuth() {
@@ -145,6 +146,20 @@ $("#pages .current").removeClass("current");
 		navigator.notification.alert("You must enter a username and password", function() {});
 		$("#submitBtn").removeAttr("disabled");
 	}
+	return false;
+}
+
+
+// LOGIN
+function handleReport() {
+	//alert('Handle Login');
+	var form = $("#reportForm");
+	
+	//disable the button so we can't resubmit while we wait
+	$("#submitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
+	
+	alert('Form Submitted: '+form);
+	
 	return false;
 }
 
