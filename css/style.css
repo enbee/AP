@@ -46,6 +46,13 @@ img { border: 0; max-width: 100%; }
 
 #form-loading{ display: none; }
 
+
+/* FORM STYLING */
+
+.ui-field-contain{ margin-bottom: 15px; }
+.ui-field-contain label{ width: 100%; }
+
+
 /* Update this style */
 /* #pages > div { display: none; position: absolute; top:0; left:0; width:100%; height: 100%; } */
 
