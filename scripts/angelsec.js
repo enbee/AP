@@ -84,11 +84,11 @@ $().ready(function() {
 			//page(nextPage);
 			page('#form');
 			
-			triggerFormLoading();
+			//triggerFormLoading();
 			
 			// LOAD FORM
 			$.get(form, function(data) {
-				triggerFormLoading();
+				//triggerFormLoading();
 				$('#form-content').html(data).trigger("create");
 			});
 			
@@ -97,7 +97,7 @@ $().ready(function() {
 		
 		// Listen for onSubmit report
 		/* $("#reportForm").on('submit',handleReport); */
-		$("form#reportForm #reportSubmitBtn").on('click', function(){
+		$("#reportSubmitBtn").on('click', function(){
 			/*
 e.preventDefault();
 			e.stopPropagation();
@@ -127,7 +127,7 @@ e.preventDefault();
 				alert('No results');
 			}else{
 				// Append to list
-				//alert(JSON.stringify(reports));
+				alert(JSON.stringify(reports));
 				//$('#form-list').listview();
 				$.each(reports, function(){
 					
