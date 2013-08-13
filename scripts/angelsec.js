@@ -97,9 +97,11 @@ $().ready(function() {
 		
 		// Listen for onSubmit report
 		/* $("#reportForm").on('submit',handleReport); */
-		$("#reportForm").on('submit',function(e){
-			e.preventDefault();
+		$("form#reportForm #reportSubmitBtn").on('click', function(){
+			/*
+e.preventDefault();
 			e.stopPropagation();
+*/
 			alert('hello');
 		});
 	}
