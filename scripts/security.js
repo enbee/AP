@@ -9,7 +9,6 @@ function deviceReady() {
 	//alert('Device Ready');
 	$("#authForm").on('submit',handleAuth);
 	$("#loginForm").on('submit',handleLogin);
-	$("#reportForm").on('submit',handleReport);
 }
 
 function checkPreAuth() {
@@ -149,19 +148,6 @@ $("#pages .current").removeClass("current");
 	return false;
 }
 
-
-// LOGIN
-function handleReport() {
-	//alert('Handle Login');
-	var form = $("#reportForm");
-	
-	//disable the button so we can't resubmit while we wait
-	$("#submitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
-	
-	alert('Form Submitted: '+form);
-	
-	return false;
-}
 
 /* function deviceReady() { */
     
