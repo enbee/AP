@@ -211,10 +211,13 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		// GET FORM DATA AND CONVER TO JSON
 		var formJSON = JSON.stringify($(form).serializeObject());
 		//var formJSON = JSON.stringify($("#reportForm").serializeObject());
-		console.log('Form Submitted: '+ JSON.stringify($(form).serializeObject()));
+		//console.log('Form Submitted: '+ JSON.stringify($(form).serializeObject()));
 		
 		var reportArray = JSON.stringify($(form).serializeArray());
-		alert(reportArray['formName']);
+		/* alert(reportArray['formName']); */
+		jQuery.each(reportArray, function(i, rA){
+      console.log(rA.value + " :: ");
+    });
 		/* var formName = reportArray[0].formName; */
 		//alert(reportArray.array[0].formName);
 		//alert(reportArray.myArray.formName);
