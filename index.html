@@ -169,9 +169,103 @@ alert('Logged In = '+logged_in);
 							<!-- GET LIST OF FORMS -->
 							<p id="form-loading"><img src="css/images/ajax-loader.gif" /></p>
 							<!-- LOAD FORM BASED ON PARAMS -->
-							<div id="form-content">
+							<!--
+<div id="form-content">
 										
 							</div>
+-->
+							<div id="submitReport">
+	<h2>Alarm Response</h2>
+	
+	<form id="reportForm">
+		
+		<input type="hidden" name="formName" value="alarm_response_1" />		
+		<input type="hidden" name="lng" value="n/a" />
+		<input type="hidden" name="lat" value="n/a" />
+		
+		<div id="addressDiv" data-role="fieldcontain">
+			<label>Address and Postcode</label>
+			<input id="addressField" type="text" name="address" class="address" />
+			<input id="postcodeField" type="text" name="postcode" class="postcode" />
+		</div>
+		
+		<div id="q1Div" data-role="fieldcontain">
+			<label>Are all the windows and doors closed and secure?</label>
+			<select name="q1">
+				<option value="0">Please Select</option>
+				<option value="1">Yes</option>
+				<option value="2">No</option>
+				<option value="3">See Comments</option>
+			</select>
+		</div>
+		
+		<div id="q2Div" data-role="fieldcontain">
+			<label>Do you have key access to the premises?</label>
+			<select name="q2">
+				<option value="0">Please Select</option>
+				<option value="1">Yes</option>
+				<option value="2">No</option>
+			</select>
+		</div>
+		
+		<div id="q3Div" data-role="fieldcontain">
+			<label>Have you been able to gain internal access to the premises?</label>
+			<select name="q3">
+				<option value="0">Please Select</option>
+				<option value="1">Yes</option>
+				<option value="2">No</option>
+			</select>
+		</div>
+		
+		<div id="q4Div" data-role="fieldcontain">
+			<label>Have you carried out just an external patrol of the premises?</label>
+			<select name="q4">
+				<option value="0">Please Select</option>
+				<option value="1">Yes</option>
+				<option value="2">No</option>
+			</select>
+		</div>
+		
+		<div id="q5Div" data-role="fieldcontain">
+			<label>Has the alarm been reset?</label>
+			<select name="q5">
+				<option value="0">Please Select</option>
+				<option value="1">Yes</option>
+				<option value="2">No</option>
+			</select>
+		</div>
+		
+		<div id="q6Div" data-role="fieldcontain">
+			<label>Are there signs of intruders?</label>
+			<select name="q6">
+				<option value="0">Please Select</option>
+				<option value="1">Yes</option>
+				<option value="2">No</option>
+				<option value="3">See Comments</option>
+			</select>
+		</div>
+		
+		<div id="q7Div" data-role="fieldcontain">
+			<label>Do you have to call for a re-secure of the premises?</label>
+			<select name="q7">
+				<option value="0">Please Select</option>
+				<option value="1">Yes</option>
+				<option value="2">No</option>
+			</select>
+		</div>
+		
+		<div id="commentsDiv" data-role="fieldcontain">
+			<label>Comments:</label>
+			<textarea name="comments" rows="10"></textarea>
+		</div>
+		
+		<div id="submitDiv" data-role="fieldcontain">    
+			<input type="submit" value="Submit" id="reportSubmitBtn" data-inline="true"/>
+		</div>
+		
+	</form>
+	
+</div>
 							
 						</div>
 						
