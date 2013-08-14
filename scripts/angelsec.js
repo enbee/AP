@@ -215,14 +215,14 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		
 		var reportArray = '['+formJSON+']';
 		var formName = reportArray[0].formName;
-		alert(formName);
+		alert(reportArray);
 		
 		// SUBMIT FORM DATA
 		var formId  = $(this).attr('id');
 		var fileName = formName + '.php'
 		var processURL = processPath + fileName ;
 		
-		alert(processURL);
+		//alert(processURL);
 		
 		return false;
 	}
