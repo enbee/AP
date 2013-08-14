@@ -211,7 +211,9 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		//var form = $("#reportForm");
 		var formArray = $("#reportForm").serializeArray();
 		//var formData = JSON.stringify(form);
-		console.log('Form Submitted: '+ JSON.stringify(formArray, null, 2));
+		console.log('Form Submitted: '+ JSON.stringify(formArray.serializeObject()));
+		
+		//$('#result').text(JSON.stringify($('form').serializeObject()));
 		//alert('Form Submitted: '+ formArray);
 		
 		//disable the button so we can't resubmit while we wait
@@ -219,6 +221,22 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		
 		return false;
 	}
+	
+	$.fn.serializeObject = function(){
+	    var o = {};
+	    var a = this.serializeArray();
+	    $.each(a, function() {
+	        if (o[this.name] !== undefined) {
+	            if (!o[this.name].push) {
+	                o[this.name] = [o[this.name]];
+	            }
+	            o[this.name].push(this.value || '');
+	        } else {
+	            o[this.name] = this.value || '';
+	        }
+	    });
+	    return o;
+	};
 	
 	
 	// --- GPS RESPONSE FUNCTIONS ---
