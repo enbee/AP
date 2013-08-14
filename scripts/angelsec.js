@@ -206,27 +206,16 @@ $( "#reportForm" ).on( "submit", function( event ) {
 	
 	// ON FORM SUBMIT FUNCTION
 	function handleReport() {
-		
-		//alert('Form Submit');
-		//var form = $("#reportForm");
-		//var formArray = $("#reportForm").serializeArray();
-		//var formData = JSON.stringify(form);
-		alert('Go');
+		// GET FORM DATA AND CONVER TO JSON
+		var formJSON = JSON.stringify($("#reportForm").serializeObject());
 		console.log('Form Submitted: '+ JSON.stringify($("#reportForm").serializeObject()));
-		
-		//$('#result').text(JSON.stringify($('form').serializeObject()));
-		//alert('Form Submitted: '+ formArray);
-		
-		//disable the button so we can't resubmit while we wait
-		//$("#reportSubmitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
-		
 		return false;
 	}
 	
+	// WONDERFUL FUNCTION TO SERIALIZE OBJECT TO JSON
 	$.fn.serializeObject = function(){
 	    var o = {};
 	    var a = this.serializeArray();
-	    alert(a);
 	    $.each(a, function() {
 	        if (o[this.name] !== undefined) {
 	            if (!o[this.name].push) {
