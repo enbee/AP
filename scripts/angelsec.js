@@ -91,7 +91,13 @@ $().ready(function() {
 		/* $("#reportForm").on('submit',handleReport); */
 		//$("#form-content").on('click', '#reportSubmitBtn', handleReport());
 		
-		$("#form-content").on('click', '#reportSubmitBtn', function(e){
+		$( "#reportForm" ).on( "submit", function( event ) {
+		  event.preventDefault();
+		  console.log( $(this).serialize() );
+		});
+		
+		/*
+$("#form-content").on('click', '#reportSubmitBtn', function(e){
 			
 			e.preventDefault();
 			
@@ -101,6 +107,7 @@ $().ready(function() {
 			
 			return false;
 		});
+*/
 	}
 	
 	
@@ -203,8 +210,8 @@ $().ready(function() {
 		//var form = $("#reportForm");
 		var formArray = $("#reportForm").serializeArray();
 		//var formData = JSON.stringify(form);
-		
-		alert('Form Submitted: '+ formArray);
+		console.log('Form Submitted: '+ formArray);
+		//alert('Form Submitted: '+ formArray);
 		
 		//disable the button so we can't resubmit while we wait
 		//$("#reportSubmitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
