@@ -93,6 +93,8 @@ $().ready(function() {
 		
 		$("#form-content").on('click', '#reportSubmitBtn', function(e){
 			
+			e.preventDefault();
+			
 			handleReport(e);
 			
 			//alert('Report Report');
