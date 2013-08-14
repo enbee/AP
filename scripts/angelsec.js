@@ -32,14 +32,6 @@ $().ready(function() {
 			}
 		}
 		
-		// Check Whether Logged As To Display Nav
-		function loggedCheck(){
-			if(logged_in == 'true'){
-				$('#footer h3').hide();
-				$('#tab-bar').show();
-			}
-		}
-		
 		// TAB-BAR PAGE CONTOLLER
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
@@ -115,6 +107,13 @@ $().ready(function() {
 		$('#form-loading').toggle();
 	}
 	
+	// Check Whether Logged As To Display Nav
+	function loggedCheck(){
+		if(logged_in == 'true'){
+			$('#footer h3').hide();
+			$('#tab-bar').show();
+		}
+	}
 	
 	function getActiveReports(){
 		//alert('Get Report List');
@@ -202,9 +201,9 @@ $().ready(function() {
 		var form = $("#reportForm");
 		
 		//disable the button so we can't resubmit while we wait
-		$("#submitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
+		$("#reportSubmitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
 		
-		alert('Form Submitted: '+form);
+		alert('Form Submitted: '+ JSON.stringify(form));
 		
 		return false;
 	}
