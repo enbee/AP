@@ -209,9 +209,10 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		
 		//alert('Form Submit');
 		//var form = $("#reportForm");
-		var formArray = $("#reportForm").serializeArray();
+		//var formArray = $("#reportForm").serializeArray();
 		//var formData = JSON.stringify(form);
-		console.log('Form Submitted: '+ JSON.stringify(formArray.serializeObject()));
+		alert('Go');
+		console.log('Form Submitted: '+ JSON.stringify($("#reportForm").serializeObject()));
 		
 		//$('#result').text(JSON.stringify($('form').serializeObject()));
 		//alert('Form Submitted: '+ formArray);
@@ -225,6 +226,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 	$.fn.serializeObject = function(){
 	    var o = {};
 	    var a = this.serializeArray();
+	    alert(a);
 	    $.each(a, function() {
 	        if (o[this.name] !== undefined) {
 	            if (!o[this.name].push) {
