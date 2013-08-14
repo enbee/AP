@@ -204,10 +204,10 @@ $().ready(function() {
 		//var formArray = $("#reportForm").serialize();
 		//var formData = JSON.stringify(form);
 		
-		alert('Form Submitted: '+ formData);
+		alert('Form Submitted: '/* + formData */);
 		
 		//disable the button so we can't resubmit while we wait
-		$("#reportSubmitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
+		//$("#reportSubmitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
 		
 		return false;
 	}
