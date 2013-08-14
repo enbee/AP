@@ -215,7 +215,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		
 		var reportArray = '['+formJSON+']';
 		var formName = reportArray[0].formName;
-		alert(reportArray);
+		alert(formName);
 		
 		// SUBMIT FORM DATA
 		var formId  = $(this).attr('id');
