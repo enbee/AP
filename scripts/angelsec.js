@@ -211,7 +211,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		//var form = $("#reportForm");
 		var formArray = $("#reportForm").serializeArray();
 		//var formData = JSON.stringify(form);
-		console.log('Form Submitted: '+ formArray);
+		console.log('Form Submitted: '+ JSON.stringify(formArray, null, 2));
 		//alert('Form Submitted: '+ formArray);
 		
 		//disable the button so we can't resubmit while we wait
