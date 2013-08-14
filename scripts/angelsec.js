@@ -213,14 +213,14 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		//var formJSON = JSON.stringify($("#reportForm").serializeObject());
 		console.log('Form Submitted: '+ JSON.stringify($(form).serializeObject()));
 		
-		alert(formJSON["formName"]);
+		alert(formJSON);
 		
 		// SUBMIT FORM DATA
 		var formId  = $(this).attr('id');
 		var fileName = formJSON[0].formName + '.php'
 		var processURL = processPath + fileName ;
 		
-		alert(processURL);
+		//alert(processURL);
 		
 		return false;
 	}
