@@ -100,7 +100,12 @@ $().ready(function() {
 		//$("#form-content").on('click', '#reportSubmitBtn', handleReport());
 		
 		$("#form-content").on('click', '#reportSubmitBtn', function(e){
-			alert('Report Report');
+			
+			handleReport(e);
+			
+			//alert('Report Report');
+			
+			return false;
 		});
 	}
 	
@@ -191,7 +196,7 @@ $().ready(function() {
 	
 	
 	// ON FORM SUBMIT FUNCTION
-	function handleReport() {
+	function handleReport(e) {
 		
 		alert('Form Submit');
 		var form = $("#reportForm");
