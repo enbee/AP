@@ -200,7 +200,7 @@ $().ready(function() {
 		alert('Form Submit');
 		var form = $("#reportForm");
 		var formArray = $("#reportForm").serialize();
-		var formdata = JSON.stringify(form);
+		var formData = JSON.stringify(form);
 		
 		alert('Form Submitted: '+ formData);
 		
