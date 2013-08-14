@@ -91,14 +91,15 @@ $().ready(function() {
 		/* $("#reportForm").on('submit',handleReport); */
 		//$("#form-content").on('click', '#reportSubmitBtn', handleReport());
 		
-		$( "#reportForm" ).on( "submit", function( event ) {
+		/*
+$( "#reportForm" ).on( "submit", function( event ) {
 		  event.preventDefault();
 		  console.log( $(this).serialize() );
 		  return false;
 		});
+*/
 		
-		/*
-$("#form-content").on('click', '#reportSubmitBtn', function(e){
+		$("#form-content").on('click', '#reportSubmitBtn', function(e){
 			
 			e.preventDefault();
 			
@@ -108,7 +109,6 @@ $("#form-content").on('click', '#reportSubmitBtn', function(e){
 			
 			return false;
 		});
-*/
 	}
 	
 	
