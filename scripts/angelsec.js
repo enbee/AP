@@ -201,7 +201,7 @@ $().ready(function() {
 		
 		//alert('Form Submit');
 		//var form = $("#reportForm");
-		var formArray = $("#reportForm").serialize();
+		var formArray = $("#reportForm").serializeArray();
 		//var formData = JSON.stringify(form);
 		
 		alert('Form Submitted: '+ formArray);
