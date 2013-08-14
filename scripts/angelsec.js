@@ -97,15 +97,7 @@ $().ready(function() {
 		
 		// Listen for onSubmit report
 		/* $("#reportForm").on('submit',handleReport); */
-		$("#reportSubmitBtn").on('click', function(){
-			/*
-e.preventDefault();
-			e.stopPropagation();
-*/
-			alert('hello');
-			
-			return false;
-		});
+		$("#form-content").on('click', '#reportSubmitBtn', handleReport());
 	}
 	
 	
@@ -198,8 +190,7 @@ e.preventDefault();
 	function handleReport() {
 		
 		alert('Form Submit');
-		/*
-var form = $("#reportForm");
+		var form = $("#reportForm");
 		
 		//disable the button so we can't resubmit while we wait
 		$("#submitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
@@ -207,7 +198,6 @@ var form = $("#reportForm");
 		alert('Form Submitted: '+form);
 		
 		return false;
-*/
 	}
 	
 	
