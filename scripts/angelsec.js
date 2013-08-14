@@ -94,6 +94,7 @@ $().ready(function() {
 		$( "#reportForm" ).on( "submit", function( event ) {
 		  event.preventDefault();
 		  console.log( $(this).serialize() );
+		  return false;
 		});
 		
 		/*
