@@ -97,7 +97,11 @@ $().ready(function() {
 		
 		// Listen for onSubmit report
 		/* $("#reportForm").on('submit',handleReport); */
-		$("#form-content").on('click', '#reportSubmitBtn', handleReport());
+		//$("#form-content").on('click', '#reportSubmitBtn', handleReport());
+		
+		$("#form-content").on('click', '#reportSubmitBtn', function(e){
+			alert('Report Report');
+		});
 	}
 	
 	
@@ -121,7 +125,7 @@ $().ready(function() {
 				alert('No results');
 			}else{
 				// Append to list
-				alert(JSON.stringify(reports));
+				//alert(JSON.stringify(reports));
 				//$('#form-list').listview();
 				$.each(reports, function(){
 					
