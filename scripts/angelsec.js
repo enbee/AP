@@ -95,7 +95,7 @@ $().ready(function() {
 			
 			e.preventDefault();
 			
-			handleReport(e);
+			handleReport();
 			
 			//alert('Report Report');
 			
@@ -197,12 +197,12 @@ $().ready(function() {
 	
 	
 	// ON FORM SUBMIT FUNCTION
-	function handleReport(e) {
+	function handleReport() {
 		
-		alert('Form Submit');
-		var form = $("#reportForm");
-		var formArray = $("#reportForm").serialize();
-		var formData = JSON.stringify(form);
+		//alert('Form Submit');
+		//var form = $("#reportForm");
+		//var formArray = $("#reportForm").serialize();
+		//var formData = JSON.stringify(form);
 		
 		alert('Form Submitted: '+ formData);
 		
