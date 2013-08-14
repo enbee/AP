@@ -206,9 +206,22 @@ $( "#reportForm" ).on( "submit", function( event ) {
 	
 	// ON FORM SUBMIT FUNCTION
 	function handleReport() {
+		var form = "#reportForm"
+		$("#reportSubmitBtn",form).attr("disabled","disabled");
 		// GET FORM DATA AND CONVER TO JSON
-		var formJSON = JSON.stringify($("#reportForm").serializeObject());
-		console.log('Form Submitted: '+ JSON.stringify($("#reportForm").serializeObject()));
+		var formJSON = JSON.stringify($(form).serializeObject());
+		//var formJSON = JSON.stringify($("#reportForm").serializeObject());
+		console.log('Form Submitted: '+ JSON.stringify($(form).serializeObject()));
+		
+		alert(formJSON.formName);
+		
+		// SUBMIT FORM DATA
+		var formId  = $(this).attr('id');
+		var fileName = formJSON.formName + '.php'
+		var processURL = processPath + fileName ;
+		
+		alert(processURL);
+		
 		return false;
 	}
 	
