@@ -214,7 +214,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		console.log('Form Submitted: '+ JSON.stringify($(form).serializeObject()));
 		
 		var reportArray = '['+formJSON+']';
-		var formName = reportArray.formName;
+		var formName = reportArray[0].formName;
 		alert(formName);
 		
 		// SUBMIT FORM DATA
