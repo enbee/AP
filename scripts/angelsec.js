@@ -229,7 +229,6 @@ $( "#reportForm" ).on( "submit", function( event ) {
         	//navigator.notification.alert(JSON.stringify(response));
         	
         	var success = response.response;
-        	var userID = response.user_id;
         	
         	//navigator.notification.alert(success);
         	// Set variables
