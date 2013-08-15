@@ -215,7 +215,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		
 		var reportArray = JSON.parse(formJSON);
 		
-		console.log('Form Name: '+reportArray);
+		console.log('Form Name: '+reportArray[0]);
 		
 		/* var formName = reportArray[0].formName; */
 		//alert(reportArray.array[0].formName);
