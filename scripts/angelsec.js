@@ -223,6 +223,33 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		var processURL = processPath + fileName ;
 		
 		alert(processURL);
+		// POST DATA AND HANDLE RESPONSE
+		
+		 $.post(processURL, formJSON, function(response) {
+        	//navigator.notification.alert(JSON.stringify(response));
+        	
+        	var success = response.response;
+        	var userID = response.user_id;
+        	
+        	//navigator.notification.alert(success);
+        	// Set variables
+        	
+            if(success == 'true') {
+            	navigator.notification.alert("Congratulations, report submitted successfully. Now add your images.");
+				//store
+				
+				$("#pages .current").removeClass("current").toggle('slow', function(){
+					$("#photo").addClass("current").toggle('slow');
+				});
+				
+				$("#reportSubmitBtn").removeAttr("disabled");
+				
+			} else {
+				navigator.notification.alert("Report submission failed. Check your internet connection and try again.", function() {});
+			}
+			$("#reportSubmitBtn").removeAttr("reportSubmitBtn");
+		},"json");
+		
 		
 		return false;
 	}
