@@ -213,6 +213,8 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		// GET FORM DATA AND CONVER TO JSON
 		var formJSON = JSON.stringify($(form).serializeObject());
 		
+		log.console(formJSON);
+		
 		// Get Form Name
 		var reportArray = JSON.parse(formJSON);
 		var formName = reportArray.formName;
@@ -225,7 +227,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		alert(processURL);
 		// POST DATA AND HANDLE RESPONSE
 		
-		 $.post(processURL, formJSON, function(response) {
+		 $.post(processURL, reportArray, function(response) {
         	//navigator.notification.alert(JSON.stringify(response));
         	
         	var success = response.response;
