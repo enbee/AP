@@ -206,26 +206,23 @@ $( "#reportForm" ).on( "submit", function( event ) {
 	
 	// ON FORM SUBMIT FUNCTION
 	function handleReport() {
+	
 		var form = "#reportForm"
 		$("#reportSubmitBtn",form).attr("disabled","disabled");
+		
 		// GET FORM DATA AND CONVER TO JSON
 		var formJSON = JSON.stringify($(form).serializeObject());
-		//var formJSON = JSON.stringify($("#reportForm").serializeObject());
-		//console.log('Form Submitted: '+ JSON.stringify($(form).serializeObject()));
 		
+		// Get Form Name
 		var reportArray = JSON.parse(formJSON);
+		var formName = reportArray.formName;
 		
-		console.log('Form Name: '+reportArray.formName);
-		
-		/* var formName = reportArray[0].formName; */
-		//alert(reportArray.array[0].formName);
-		//alert(reportArray.myArray.formName);
 		// SUBMIT FORM DATA
 		var formId  = $(this).attr('id');
 		var fileName = formName + '.php'
 		var processURL = processPath + fileName ;
 		
-		//alert(processURL);
+		alert(processURL);
 		
 		return false;
 	}
