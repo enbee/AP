@@ -207,7 +207,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 	// ON FORM SUBMIT FUNCTION
 	function handleReport() {
 		alert('Handle Report');
-		var form = "#reportForm"
+		var form = "#reportForm";
 		$("#reportSubmitBtn",form).attr("disabled","disabled");
 		
 		// GET FORM DATA AND CONVER TO JSON
