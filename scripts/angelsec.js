@@ -211,8 +211,8 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		$("#reportSubmitBtn",form).attr("disabled","disabled");
 		
 		// GET FORM DATA AND CONVER TO JSON
-		var formPre = $(form).serializeArray();
-		//var formPre = $(form).serializeObject();		
+		//var formPre = $(form).serializeArray();
+		var formPre = $(form).serializeObject();		
 		var formJSON = JSON.stringify($(form).serializeObject());
 		
 		log.console(formJSON);
@@ -224,9 +224,9 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		// SUBMIT FORM DATA
 		var formId  = $(this).attr('id');
 		var fileName = formName + '.php'
-		var processURL = processPath + fileName ;
+		var processURL = processPath + fileName;
 		
-		alert(processURL);
+		//alert(processURL);
 		// POST DATA AND HANDLE RESPONSE
 		
 		 $.post(processURL, formPre, function(response) {
