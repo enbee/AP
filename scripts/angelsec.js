@@ -206,16 +206,16 @@ $( "#reportForm" ).on( "submit", function( event ) {
 	
 	// ON FORM SUBMIT FUNCTION
 	function handleReport() {
-		alert('Handle Report');
+		
 		var form = "#reportForm";
 		$("#reportSubmitBtn",form).attr("disabled","disabled");
-		
+		alert('Handle Report');
 		// GET FORM DATA AND CONVER TO JSON
 		//var formPre = $(form).serializeArray();
 		var formPre = $(form).serializeObject();		
 		var formJSON = JSON.stringify($(form).serializeObject());
 		
-		log.console(formJSON);
+		//log.console(formJSON);
 		
 		// Get Form Name
 		var reportArray = JSON.parse(formJSON);
