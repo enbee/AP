@@ -82,6 +82,13 @@ $().ready(function() {
 			$.get(form, function(data) {
 				//triggerFormLoading();
 				$('#form-content').html(data).trigger("create");
+				
+				// UPDATE HIDDED FIELDS
+				$("input[name='userID']").val(userID); 
+				$("input[name='lat']").val(lat); 
+				$("input[name='lng']").val(lng); 
+				
+				
 			});
 			
 		});

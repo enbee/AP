@@ -44,6 +44,7 @@ function handleAuth() {
             if(success == 'true') {
             	navigator.notification.alert("Congratulations, authorisation successful. Please login to continue.");
 				//store
+				// - CHECK IF TOP TWO ARE CORRECT!!!
 				window.localStorage.setItem("ap_auth", ac);
 				window.localStorage.setItem("ap_user_id", userID);
 				window.localStorage.setItem("ap_authorised", true);
@@ -92,12 +93,14 @@ function handleLogin() {
         $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p,auth:auth}, function(response) {
         	//navigator.notification.alert(JSON.stringify(response));
         	
+        	// !! CHECK FOR USE OF user_id , and global userID
         	var success = response.response;
         	var user_id = response.user_id;
         	var user = response.user;
         	var type = response.type;
         	formPath = response.formPath;
         	processPath = response.processPath;
+        	userID = response.user_id;
         	
         	//navigator.notification.alert(success);
         	// Set variables
