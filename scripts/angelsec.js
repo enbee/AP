@@ -211,6 +211,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		$("#reportSubmitBtn",form).attr("disabled","disabled");
 		
 		// GET FORM DATA AND CONVER TO JSON
+		var formPre = $(form).serializeObject();		
 		var formJSON = JSON.stringify($(form).serializeObject());
 		
 		log.console(formJSON);
@@ -227,7 +228,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		alert(processURL);
 		// POST DATA AND HANDLE RESPONSE
 		
-		 $.post(processURL, reportArray, function(response) {
+		 $.post(processURL, formPre, function(response) {
         	//navigator.notification.alert(JSON.stringify(response));
         	
         	var success = response.response;
