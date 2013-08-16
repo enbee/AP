@@ -34,9 +34,15 @@ $().ready(function() {
 			//options.chunkedMode = false;
 			
 			var params = new Object();
-			params.user = "android";
+			/*
+params.user = "android";
 			params.userID = "21";
 			params.report = "37";
+			params.db = "angelsec";
+*/
+			//params.user = "android";
+			params.userID = userID;
+			params.report = currentReportId;
 			params.db = "angelsec";
 			//params.value2 = filename.substr(filename.lastIndexOf(".")+1);;
 			//params.extension = filename.substr(filename.lastIndexOf(".")+1);
