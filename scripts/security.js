@@ -101,7 +101,7 @@ function handleLogin() {
         	formPath = response.formPath;
         	processPath = response.processPath;
         	userID = response.user_id;
-        	currentReportId = response.report;
+        	currentReportId = response.report.report_id;
         	
         	//navigator.notification.alert(success);
         	// Set variables
