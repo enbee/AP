@@ -209,7 +209,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		
 		var form = "#reportForm";
 		$("#reportSubmitBtn",form).attr("disabled","disabled");
-		alert('Handle Report');
+		//alert('Handle Report');
 		// GET FORM DATA AND CONVER TO JSON
 		//var formPre = $(form).serializeArray();
 		var formPre = $(form).serializeObject();		
