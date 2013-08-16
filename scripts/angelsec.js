@@ -195,7 +195,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		// Update GPS On page change
 		
 		//alert('Lat: '+lat+' // Lng: '+lng);
-		
+		alert('User: '+userID+' // Current Form: '+currentFormId);
 		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		
 		var toPage = $(toPage),
