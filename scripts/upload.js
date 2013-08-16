@@ -42,6 +42,7 @@ params.user = "android";
 */
 			//params.user = "android";
 			params.userID = userID;
+			params.auth = auth;
 			params.report = currentReportId;
 			params.db = "angelsec";
 			//params.value2 = filename.substr(filename.lastIndexOf(".")+1);;
