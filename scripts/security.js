@@ -101,6 +101,7 @@ function handleLogin() {
         	formPath = response.formPath;
         	processPath = response.processPath;
         	userID = response.user_id;
+        	currentReportId = response.report;
         	
         	//navigator.notification.alert(success);
         	// Set variables
@@ -113,6 +114,7 @@ function handleLogin() {
 				window.localStorage.setItem("ap_logged_in", true); 
 				window.localStorage.setItem("ap_formPath", formPath);
 				window.localStorage.setItem("ap_processPath", processPath);
+				window.localStorage.setItem("ap_reportID", currentReportId);
 				
 				
 				//alert('Form: '+formPath+'/n Process: '+processPath);
