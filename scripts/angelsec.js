@@ -21,7 +21,7 @@ $().ready(function() {
 		// UPDATE GLOBAL VARS!
 		authorised = window.localStorage.getItem("ap_authorised");
 		auth = window.localStorage.getItem("ap_auth");
-		//userID = window.localStorage.getItem("ap_userID");
+		userID = window.localStorage.getItem("ap_user_id");
 		logged_in = window.localStorage.getItem("ap_logged_in");
 		
     	/*
