@@ -206,7 +206,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 	
 	// ON FORM SUBMIT FUNCTION
 	function handleReport() {
-	
+		alert('Handle Report');
 		var form = "#reportForm"
 		$("#reportSubmitBtn",form).attr("disabled","disabled");
 		
