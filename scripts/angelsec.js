@@ -13,10 +13,31 @@ $().ready(function() {
 	// --- CORDOVA READY
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
-		
+	
 		// Get initial GPS
 		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
 		var watchId = navigator.geolocation.watchPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
+		
+		// UPDATE GLOBAL VARS!
+		authorised = window.localStorage.getItem("ap_authorised");
+		auth = window.localStorage.getItem("ap_auth");
+		userID = window.localStorage.getItem("ap_userID");
+		logged_in = window.localStorage.getItem("ap_logged_in");
+		
+    	/*
+user_id = response.user_id;
+    	user = response.user;
+    	type = response.type;
+*/
+		
+		// GPS
+		lat = window.localStorage.getItem("ap_lat");
+		lng = window.localStorage.getItem("ap_lng");
+		
+		// PATHS AND IDS
+		formPath = window.localStorage.getItem("ap_formPath");
+		processPath = window.localStorage.getItem("ap_processPath");
+		currentReportId = window.localStorage.getItem("ap_reportID");
 		
 		// --- CHECK USER LOGGED IN	-----
 		if(authorised != 'true'|| authorised == undefined){
