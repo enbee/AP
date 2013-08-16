@@ -240,6 +240,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
         	//navigator.notification.alert(JSON.stringify(response));
         	
         	var success = response.response;
+        	currentFormId = response.reportID;
         	
         	//navigator.notification.alert(success);
         	// Set variables
@@ -249,6 +250,9 @@ $( "#reportForm" ).on( "submit", function( event ) {
 				//store
 				
 				$("#pages .current").removeClass("current").toggle('slow', function(){
+					// Update Current Report
+					
+					// Go To Photo Uploader
 					$("#photo").addClass("current").toggle('slow');
 				});
 				
