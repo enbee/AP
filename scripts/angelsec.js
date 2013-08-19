@@ -210,11 +210,11 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		//alert('P. Form: '+formPath+'/n Process: '+processPath);
 		// Update GPS On page change
 		
-		alert('Lat: '+lat+' // Lng: '+lng);
+		//alert('Lat: '+lat+' // Lng: '+lng);
 		//alert('User: '+userID+' // Current Form: '+currentReportId);
 		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
 		
-		alert('Lat: '+lat+' // Lng: '+lng);
+		//alert('Lat: '+lat+' // Lng: '+lng);
 		
 		var toPage = $(toPage),
 		fromPage = $("#pages .current");
