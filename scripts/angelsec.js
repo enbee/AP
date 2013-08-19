@@ -124,6 +124,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		$("#form-content").on('click', '#reportSubmitBtn', function(e){
 			
 			e.preventDefault();
+			navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
 			
 			handleReport();
 			
@@ -230,6 +231,11 @@ $( "#reportForm" ).on( "submit", function( event ) {
 	
 	// ON FORM SUBMIT FUNCTION
 	function handleReport() {
+		
+		// UPDATE HIDDED FIELDS
+		$("input[name='userID']").val(userID); 
+		$("input[name='lat']").val(lat); 
+		$("input[name='lng']").val(lng); 
 		
 		var form = "#reportForm";
 		$("#reportSubmitBtn",form).attr("disabled","disabled");
