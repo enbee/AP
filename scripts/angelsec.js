@@ -15,20 +15,14 @@ $().ready(function() {
 	function onDeviceReady() {
 	
 		// Get initial GPS
-		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
-		var watchId = navigator.geolocation.watchPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
+		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		//var watchId = navigator.geolocation.watchPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
 		
 		// UPDATE GLOBAL VARS!
 		authorised = window.localStorage.getItem("ap_authorised");
 		auth = window.localStorage.getItem("ap_auth");
 		userID = window.localStorage.getItem("ap_user_id");
 		logged_in = window.localStorage.getItem("ap_logged_in");
-		
-    	/*
-user_id = response.user_id;
-    	user = response.user;
-    	type = response.type;
-*/
 		
 		// GPS
 		lat = window.localStorage.getItem("ap_lat");
@@ -215,9 +209,11 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		//alert('P. Form: '+formPath+'/n Process: '+processPath);
 		// Update GPS On page change
 		
-		//alert('Lat: '+lat+' // Lng: '+lng);
-		alert('User: '+userID+' // Current Form: '+currentReportId);
-		//navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		alert('Lat: '+lat+' // Lng: '+lng);
+		//alert('User: '+userID+' // Current Form: '+currentReportId);
+		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		
+		alert('Lat: '+lat+' // Lng: '+lng);
 		
 		var toPage = $(toPage),
 		fromPage = $("#pages .current");
