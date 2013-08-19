@@ -15,7 +15,7 @@ $().ready(function() {
 	function onDeviceReady() {
 	
 		// Get initial GPS
-		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
 		//var watchId = navigator.geolocation.watchPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
 		
 		// UPDATE GLOBAL VARS!
@@ -211,7 +211,7 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		
 		alert('Lat: '+lat+' // Lng: '+lng);
 		//alert('User: '+userID+' // Current Form: '+currentReportId);
-		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError);
+		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
 		
 		alert('Lat: '+lat+' // Lng: '+lng);
 		
