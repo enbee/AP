@@ -1,12 +1,3 @@
-// --- INIT iSCROLL LITE
-/*
-	var theScroll;
-	function scroll(){
-		theScroll = new iScroll('wrapper');
-	}
-*/
-/* document.addEventListener('DOMContentLoaded', scroll, false); */
-
 // --- JQUERY READY
 $().ready(function() { 
 		
@@ -51,11 +42,10 @@ $().ready(function() {
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
 		    var nextPage = $(e.target.hash);
-		   /*  alert('Next Page: '+e.target.hash); */
+		    
 		    // Check if reports
 		    if(e.target.hash == '#reports'){
 			    // Populate Current Report List
-			    //alert('call function!');
 			    $("#form-list").empty();
 			    getActiveReports();
 		    }
@@ -73,53 +63,29 @@ $().ready(function() {
 		
 		// FORM PAGE CONTOLLER
 		$('#form-list').on('click', 'a', function(e){
-			// CALL FORM PAGE
-			//alert('Start Load');
 			
+			// CALL FORM PAGE
 			e.stopImmediatePropagation();
 			e.preventDefault();
 			resetbutton(this);
 			
-			//var formLoc = 'http://asgt.mocwebservices.co.uk/ANGELSEC/forms/';
 			var formId  = $(this).attr('id');
 			var form = formPath + formId + '.html';
-			/* var form = formLoc + formId + '.html'; */
-			//var nextPage = $('#form');
-			//var nextPage = $(e.target.hash);
-			//var nextPage = e.target.hash;
-			//alert(nextPage);
-			//page(nextPage);
-			page('#form');
 			
-			//triggerFormLoading();
+			page('#form');
 			
 			// LOAD FORM
 			$.get(form, function(data) {
-				//triggerFormLoading();
+				
 				$('#form-content').html(data).trigger("create");
 				
 				// UPDATE HIDDED FIELDS
 				$("input[name='userID']").val(userID); 
 				$("input[name='lat']").val(lat); 
-				$("input[name='lng']").val(lng); 
-				
-				
+				$("input[name='lng']").val(lng);
 			});
 			
 		});
-		
-		
-		// Listen for onSubmit report
-		/* $("#reportForm").on('submit',handleReport); */
-		//$("#form-content").on('click', '#reportSubmitBtn', handleReport());
-		
-		/*
-$( "#reportForm" ).on( "submit", function( event ) {
-		  event.preventDefault();
-		  console.log( $(this).serialize() );
-		  return false;
-		});
-*/
 		
 		$("#form-content").on('click', '#reportSubmitBtn', function(e){
 			
@@ -127,8 +93,6 @@ $( "#reportForm" ).on( "submit", function( event ) {
 			navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
 			
 			handleReport();
-			
-			//alert('Report Report');
 			
 			return false;
 		});
@@ -149,33 +113,21 @@ $( "#reportForm" ).on( "submit", function( event ) {
 	}
 	
 	function getActiveReports(){
-		//alert('Get Report List');
+		
 		// Call for json response of reports
 		 $.post("http://asgt.mocwebservices.co.uk/PG/services/get-report-list.php", {auth:auth, userID:userID}, function(reports) {
-        	//navigator.notification.alert(JSON.stringify(response));
-        	
-        	/* var success = response.response; */
-        	
+        	        	
         	// If reports .. display list
 			if(reports.length == 0){
 				// No results
 				alert('No results');
 			}else{
 				// Append to list
-				//alert(JSON.stringify(reports));
-				//$('#form-list').listview();
 				$.each(reports, function(){
 					
 					var string = '<a href="#form" id="'+this.name+'" class="report-btn" data-icon="plus" data-role="button">'+this.label+'</a>';
-									
-					
 					$('#form-list').append(string).trigger("create");
-					//$('ul#form-list').listview('refresh');
-					
-					
 				});
-				//$('#form-list').listview('refresh');
-				//$("#form-list ul li a").attr("data-role", "button").attr("data-icon", "plus");
 			}
         	
 		},"json");
@@ -186,16 +138,17 @@ $( "#reportForm" ).on( "submit", function( event ) {
 	
 	function logout(){
 		
-		
+		// REMOVE VARIABLES
 		window.localStorage.removeItem("ap_lat");
 		window.localStorage.removeItem("ap_lng");
 		window.localStorage.removeItem("ap_username");
 		window.localStorage.removeItem("ap_password");
 		window.localStorage.setItem("ap_logged_in", false); 
 		
-		// Reset form
+		// RESET FORM
 		$('#loginForm').find("input[type=password], input[type=text], textarea").val("");
 		
+		// GO TO LOGIN PAGE
 		page('#login');
 		
 		$('#tab-bar').hide();
@@ -204,17 +157,10 @@ $( "#reportForm" ).on( "submit", function( event ) {
 	}
 	
 	// --- PAGE SWITCHER ----
-	
 	function page(toPage) {
-	
-		//alert('P. Form: '+formPath+'/n Process: '+processPath);
+		
 		// Update GPS On page change
-		
-		//alert('Lat: '+lat+' // Lng: '+lng);
-		//alert('User: '+userID+' // Current Form: '+currentReportId);
 		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
-		
-		//alert('Lat: '+lat+' // Lng: '+lng);
 		
 		var toPage = $(toPage),
 		fromPage = $("#pages .current");
@@ -239,13 +185,10 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		
 		var form = "#reportForm";
 		$("#reportSubmitBtn",form).attr("disabled","disabled");
-		//alert('Handle Report');
+		
 		// GET FORM DATA AND CONVER TO JSON
-		//var formPre = $(form).serializeArray();
 		var formPre = $(form).serializeObject();		
 		var formJSON = JSON.stringify($(form).serializeObject());
-		
-		//log.console(formJSON);
 		
 		// Get Form Name
 		var reportArray = JSON.parse(formJSON);
@@ -256,22 +199,17 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		var fileName = formName + '.php'
 		var processURL = processPath + fileName;
 		
-		//alert(processURL);
 		// POST DATA AND HANDLE RESPONSE
-		
 		 $.post(processURL, formPre, function(response) {
-        	//navigator.notification.alert(JSON.stringify(response));
         	
         	var success = response.response;
         	currentReportId = response.reportID;
         	
-        	//navigator.notification.alert(success);
         	// Set variables
-        	
             if(success == 'true') {
+            	
             	navigator.notification.alert("Congratulations, report submitted successfully. Now add your images.");
-				//store
-				
+            	
 				$("#pages .current").removeClass("current").toggle('slow', function(){
 					// Update Current Report
 					
@@ -310,7 +248,6 @@ $( "#reportForm" ).on( "submit", function( event ) {
 	
 	
 	// --- GPS RESPONSE FUNCTIONS ---
-	
 	function onGpsSuccess(position) {
 		
 		// UPDATE LOCAL STORAGE
@@ -320,34 +257,16 @@ $( "#reportForm" ).on( "submit", function( event ) {
 		// UPDATE VARS
 		lat = window.localStorage.getItem("ap_lat");
 		lng = window.localStorage.getItem("ap_lng");
-		
-		//alert('Lat: '+lat+' // Lng: '+lng);
-		/*
-alert('Latitude: '           + position.coords.latitude              + '<br />' +
-                        'Longitude: '          + position.coords.longitude             + '<br />' +
-                        'Altitude: '           + position.coords.altitude              + '<br />' +
-                        'Accuracy: '           + position.coords.accuracy              + '<br />' +
-                        'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-                        'Heading: '            + position.coords.heading               + '<br />' +
-                        'Speed: '              + position.coords.speed                 + '<br />' +
-                        'Timestamp: '          + new Date(position.timestamp)          + '<br />');
-*/
 	}
 	
 	
-	function onGpsError(error) {
-		/*
-alert('code: '    + error.code    + '\n' +
-          'message: ' + error.message + '\n');	
-*/		
-		
+	function onGpsError(error) {	
 		window.localStorage.setItem("ap_lat", '0');
 		window.localStorage.setItem("ap_lng", '0');
 	}
 	
 	
 	// --- RESET BUTTONS
-	
 	var resetbutton = function(buttonname) {
 		$(buttonname).removeClass("ui-btn-active");
 	}
