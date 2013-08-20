@@ -172,14 +172,14 @@ $().ready(function() {
 		if(toPage.hasClass("current") || toPage === fromPage) {
 			return;
 		}
+		fromPage.removeClass("current").fadeToggle('slow', 'linear', function(){
+			toPage.addClass("current").toggle('slow');
+		});
 		/*
-fromPage.removeClass("current").fadeToggle('slow', 'linear' function(){
+fromPage.removeClass("current").toggle('slow', function(){
 			toPage.addClass("current").toggle('slow');
 		});
 */
-		fromPage.removeClass("current").toggle('slow', function(){
-			toPage.addClass("current").toggle('slow');
-		});
 		
 	}
 	

@@ -78,9 +78,9 @@ input#postcodeField { width:25% !important; }
 
 /* TAB BAR STYLING */
 
-#tab-bar{ margin:0; padding:0; display: none; background-color: #000; height: 100px; }
+#tab-bar{ margin:0; padding:0; display: none; background-color: #000; height: 75px; margin-top: -1px; }
 #tab-bar li { display: inline; float:left; width: 33.333%; }
-#tab-bar a { background-color: #000; color: #fff; display: block; font-weight: bold; overflow: hidden; position: relative; text-align: center; text-decoration: none; -webkit-touch-callout:none; padding-top: 10px; padding-bottom: 10px; }
+#tab-bar a { background-color: #000; color: #fff; display: block; font-weight: bold; overflow: hidden; position: relative; text-align: center; text-decoration: none; -webkit-touch-callout:none; padding-top: 10px; padding-bottom: 10px; line-height: 75px; }
 
 
 
