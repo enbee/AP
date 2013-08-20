@@ -3,10 +3,8 @@ function init() {
 	delete init;
 }
 
-// logged_in = false;
-
 function deviceReady() {
-	//alert('Device Ready');
+	// HANDEL LOGINS
 	$("#authForm").on('submit',handleAuth);
 	$("#loginForm").on('submit',handleLogin);
 }
@@ -20,41 +18,29 @@ function checkPreAuth() {
 	}
 }
 
-// AUTH
+// -------- HANDLE AUTHORISATION -------------------------------------------------------------------------
 function handleAuth() {
-	//alert('Handle Login');
-	//navigator.notification.alert('Handle Auth!');
-	var form = $("#authForm");   
-	//disable the button so we can't resubmit while we wait
+	
+	var form = $("#authForm");
+	
+	//- Disable the button so we can't resubmit while we wait
 	$("#authBtn",form).attr("disabled","disabled");
 	var ac = $("#auth", form).val();
-	//navigator.notification.alert("AC: "+ac);
 	if(ac != '') {
-		
-		//navigator.notification.alert('Go');
+	
         $.post("http://asgt.mocwebservices.co.uk/PG/services/authorise.php", {auth:ac}, function(response) {
-        	//navigator.notification.alert(JSON.stringify(response));
-        	
+        	        	
         	var success = response.response;
         	var userID = response.user_id;
         	
-        	//navigator.notification.alert(success);
-        	// Set variables
-        	
+        	// CHECK SUCCESS STATUS
             if(success == 'true') {
             	navigator.notification.alert("Congratulations, authorisation successful. Please login to continue.");
-				//store
-				// - CHECK IF TOP TWO ARE CORRECT!!!
+				
+				// - STORE DATA
 				window.localStorage.setItem("ap_auth", ac);
-				window.localStorage.setItem("ap_user_id", userID);
 				window.localStorage.setItem("ap_authorised", true);
 				
-				//alert('Switch Pages');
-				//page('#splash');
-				/*
-$("#pages .current").removeClass("current");
-				$("#splash").addClass("current");
-*/
 				$("#pages .current").removeClass("current").toggle('slow', function(){
 					$("#login").addClass("current").toggle('slow');
 				});
@@ -67,33 +53,33 @@ $("#pages .current").removeClass("current");
 			$("#authBtn").removeAttr("disabled");
 		},"json");
 	} else {
-		//Thanks Igor!
+		
 		navigator.notification.alert("You must enter a valid authorisation code.", function() {});
 		$("#authBtn").removeAttr("disabled");
 	}
+	
 	$("#authBtn").removeAttr("disabled");
-	//alert('false');
+	
 	return false;
 }
 
 
-// LOGIN
+// -------- HANDLE LOGIN -------------------------------------------------------------------------
 function handleLogin() {
-	//alert('Handle Login');
+	
 	var form = $("#loginForm");
 	
-	//disable the button so we can't resubmit while we wait
+	// - Disable the button so we can't resubmit while we wait
 	$("#submitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
 	var u = $("#username", form).val();
 	var p = $("#password", form).val();
-	//navigator.notification.alert("click");
+	
 	if(u != '' && p!= '') {
-		//alert(auth);
-		//navigator.notification.alert('Go');
+		
+		// SEND LOGIN FORM
         $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p,auth:auth}, function(response) {
-        	//navigator.notification.alert(JSON.stringify(response));
-        	
-        	// !! CHECK FOR USE OF user_id , and global userID
+        	        	
+        	// SET VARS AND UPDATE THE GLOBALS
         	var success = response.response;
         	var user_id = response.user_id;
         	var user = response.user;
@@ -103,12 +89,9 @@ function handleLogin() {
         	userID = response.user_id;
         	currentReportId = response.report.report_id;
         	
-        	//navigator.notification.alert(success);
-        	// Set variables
-        	
             if(success == 'true') {
-            	//navigator.notification.alert("Login Success");
-				//store
+            	
+            	// STORE LOGIN INFO INTO LOCALSTORAGE FOR REUSE
 				window.localStorage.setItem("ap_username", u);
 				window.localStorage.setItem("ap_password", p);
 				window.localStorage.setItem("ap_user_id", user_id);
@@ -117,28 +100,15 @@ function handleLogin() {
 				window.localStorage.setItem("ap_processPath", processPath);
 				window.localStorage.setItem("ap_reportID", currentReportId);
 				
-				
-				//alert('Form: '+formPath+'/n Process: '+processPath);
-				
-				/*
-formPath = window.localStorage.getItem("ap_formPath");
-				processPath = window.localStorage.getItem("ap_processPath");
-*/
-				
-				//alert('Switch Pages');
-				//page('#splash');
-				/*
-$("#pages .current").removeClass("current");
-				$("#splash").addClass("current");
-*/
+				// - PAGING
 				$("#pages .current").removeClass("current").toggle('slow', function(){
 					$("#splash").addClass("current").toggle('slow');
 				});
 				
-				
 				$('#footer h3').hide();
 				$('#tab-bar').show();
 				
+				// - REENABLE SUBMIT
 				$("#submitBtn").removeAttr("disabled");
 				
 			} else {
@@ -147,17 +117,9 @@ $("#pages .current").removeClass("current");
 			$("#submitBtn").removeAttr("disabled");
 		},"json");
 	} else {
-		//Thanks Igor!
+		// - LOGIN ERROR HANDLING
 		navigator.notification.alert("You must enter a username and password", function() {});
 		$("#submitBtn").removeAttr("disabled");
 	}
 	return false;
 }
-
-
-/* function deviceReady() { */
-    
-	//$("#loginForm").on('submit',handleLogin);
-
-/* } */
-

@@ -1,16 +1,11 @@
-//JQUERY READY
+// JQUERY READY
 $().ready(function() {  
 	// Wait for PhoneGap to load
 	document.addEventListener("deviceready", onDeviceReady, false);
 
 	function onDeviceReady() {
-		// Now safe to use device APIs
-		//alert('Device Be Ready');
-		// PhoneGap is ready
 		
-		// Retrieve image file location from specified source
-		
-		// ON BTN CLICK
+		// ------- ON UPLOAD BTN CLICK ---------------------------------------------
 		$('#upload_btn').click(function() {
 		
 		
@@ -24,7 +19,7 @@ $().ready(function() {
 		}
 		
 		
-		
+		// ------ PHOTO UPLOAD FUNCTION ---------------------------------------------
 		function uploadPhoto(imageURI) {
 		
 			var options = new FileUploadOptions();
@@ -33,25 +28,17 @@ $().ready(function() {
 			options.mimeType="image/jpeg";
 			//options.chunkedMode = false;
 			
+			// - SET UP PARAMETERS
 			var params = new Object();
-			/*
-params.user = "android";
-			params.userID = "21";
-			params.report = "37";
-			params.db = "angelsec";
-*/
-			//params.user = "android";
+			
 			params.userID = userID;
 			params.auth = auth;
 			params.report = currentReportId;
-			params.db = "angelsec";
-			//params.value2 = filename.substr(filename.lastIndexOf(".")+1);;
-			//params.extension = filename.substr(filename.lastIndexOf(".")+1);
+			
 			params.headers={'Connection':'close'};
 			
 			options.params = params;
 			
-			//alert(JSON.stringify(imageURI));
 			
 			var ft = new FileTransfer();
 			
@@ -62,9 +49,9 @@ params.user = "android";
 			ft.onprogress = function(progressEvent) {
 				
 				if (progressEvent.lengthComputable) {
+					
+					// - PERCENTAGE BAR
 					var perc = Math.floor(progressEvent.loaded / progressEvent.total * 100);
-					//statusDom.innerHTML = perc + "% loaded...";
-					//$('#response').append(perc + "% loaded...");
 					
 					$('#progress span').css({
 						'width': perc + "%"
@@ -81,7 +68,9 @@ params.user = "android";
 		
 			ft.upload(imageURI, encodeURI("http://asgt.mocwebservices.co.uk/PG/services/upload.php"), win, fail, options);            
 		}
-
+		
+		
+		// ------- ON FILE TRANSFER SUCCESS ---------------------------------------------
 		function win(r) {
 		
 			var str = r.response;
@@ -104,13 +93,15 @@ params.user = "android";
 				}).prependTo($('#response'));
 			}
 		}
-
+		
+		// ------- ON FILE TRANSFER FAILURE ---------------------------------------------
 		function fail(error) {
 			$('#response').append('Error Code: '+error.code+'</br>');
 			$('#response').append('Error Source: '+error.source+'</br>'); 
 			$('#response').append('Error Target: '+error.target+'</br>');
 		}
 		
+		// ------- RESET UPLOAD FORM ----------------------------------------------------
 		$('#success').click(function() {
 		    $('#response').empty();
 		    $('#progress').toggle('slow', function(){

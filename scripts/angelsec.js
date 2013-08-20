@@ -5,11 +5,11 @@ $().ready(function() {
 	document.addEventListener("deviceready", onDeviceReady, false);
 	function onDeviceReady() {
 	
-		// Get initial GPS
+		// --------- GET INITIAL GPS ----------------------------------------------------------------------
 		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
 		//var watchId = navigator.geolocation.watchPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
 		
-		// UPDATE GLOBAL VARS!
+		// --------- UPDATE GLOBAL VARS! ----------------------------------------------------------------
 		authorised = window.localStorage.getItem("ap_authorised");
 		auth = window.localStorage.getItem("ap_auth");
 		userID = window.localStorage.getItem("ap_user_id");
@@ -24,7 +24,7 @@ $().ready(function() {
 		processPath = window.localStorage.getItem("ap_processPath");
 		currentReportId = window.localStorage.getItem("ap_reportID");
 		
-		// --- CHECK USER LOGGED IN	-----
+		// --------- CHECK USER LOGGED IN	-----------------------------------------------------------------
 		if(authorised != 'true'|| authorised == undefined){
 			page('#authorise');
 		}else{	
@@ -38,7 +38,7 @@ $().ready(function() {
 			}
 		}
 		
-		// TAB-BAR PAGE CONTOLLER
+		// ---------- TAB-BAR PAGE CONTOLLER --------------------------------------------------------
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
 		    var nextPage = $(e.target.hash);
@@ -53,7 +53,7 @@ $().ready(function() {
 			page(nextPage);
 		});
 		
-		
+		// ----------- LOGOUT HANDLER ----------------------------------------------------------------
 		$('a#logout').on('click', function(e){
 			e.preventDefault();
 			resetbutton(this);
@@ -61,7 +61,7 @@ $().ready(function() {
 		});
 		
 		
-		// FORM PAGE CONTOLLER
+		// ----------- FORM PAGE CONTOLLER ----------------------------------------------------------
 		$('#form-list').on('click', 'a', function(e){
 			
 			// CALL FORM PAGE
@@ -87,6 +87,7 @@ $().ready(function() {
 			
 		});
 		
+		// ------------ REPORT SUBMIT HANDLING -----------------------------------------------------
 		$("#form-content").on('click', '#reportSubmitBtn', function(e){
 			
 			e.preventDefault();
@@ -97,10 +98,11 @@ $().ready(function() {
 			return false;
 		});
 	}
+
 	
+	// -------- FUNCTIONS -------------------------------------------------------------------------	
 	
 	function triggerFormLoading(){
-		//alert('Toggle Form Load');
 		$('#form-loading').toggle();
 	}
 	
@@ -112,6 +114,8 @@ $().ready(function() {
 		}
 	}
 	
+	
+	// -------- GET ACTIVE REPORTS -------------------------------------------------------------------------
 	function getActiveReports(){
 		
 		// Call for json response of reports
@@ -135,7 +139,7 @@ $().ready(function() {
 		return false;
 	}
 	
-	
+	// -------- LOGOUT FUNCTION -------------------------------------------------------------------------
 	function logout(){
 		
 		// REMOVE VARIABLES
@@ -156,7 +160,7 @@ $().ready(function() {
 		
 	}
 	
-	// --- PAGE SWITCHER ----
+	// -------- PAGE SWITCHER -------------------------------------------------------------------------
 	function page(toPage) {
 		
 		// Update GPS On page change
@@ -175,7 +179,7 @@ $().ready(function() {
 	}
 	
 	
-	// ON FORM SUBMIT FUNCTION
+	// -------- ON FORM SUBMIT FUNCTION -----------------------------------------------------------------
 	function handleReport() {
 		
 		// UPDATE HIDDED FIELDS
@@ -229,7 +233,7 @@ $().ready(function() {
 		return false;
 	}
 	
-	// WONDERFUL FUNCTION TO SERIALIZE OBJECT TO JSON
+	// ------ WONDERFUL FUNCTION TO SERIALIZE OBJECT TO JSON -----------------------------------------------------------
 	$.fn.serializeObject = function(){
 	    var o = {};
 	    var a = this.serializeArray();
@@ -247,7 +251,7 @@ $().ready(function() {
 	};
 	
 	
-	// --- GPS RESPONSE FUNCTIONS ---
+	// -------- GPS RESPONSE FUNCTIONS ----------------------------------------------------------------------------
 	function onGpsSuccess(position) {
 		
 		// UPDATE LOCAL STORAGE
@@ -266,7 +270,7 @@ $().ready(function() {
 	}
 	
 	
-	// --- RESET BUTTONS
+	// --- RESET BUTTONS --------------------------------------------------------------------------------------------
 	var resetbutton = function(buttonname) {
 		$(buttonname).removeClass("ui-btn-active");
 	}
