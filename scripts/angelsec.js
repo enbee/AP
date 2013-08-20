@@ -172,7 +172,7 @@ $().ready(function() {
 		if(toPage.hasClass("current") || toPage === fromPage) {
 			return;
 		}
-		fromPage.removeClass("current").fadeToggle('slow', 'linear', function(){
+		fromPage.removeClass("current").fadeToggle('fast', 'linear', function(){
 			toPage.addClass("current").toggle('slow');
 		});
 		/*
