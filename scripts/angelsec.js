@@ -156,7 +156,7 @@ $().ready(function() {
 		page('#login');
 		
 		$('#tab-bar').hide();
-		$('#footer h3').show();
+		$('#footer').show();
 		
 	}
 	

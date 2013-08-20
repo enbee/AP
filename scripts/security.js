@@ -105,7 +105,7 @@ function handleLogin() {
 					$("#splash").addClass("current").toggle('slow');
 				});
 				
-				$('#footer h3').hide();
+				$('#footer').hide();
 				$('#tab-bar').show();
 				
 				// - REENABLE SUBMIT
