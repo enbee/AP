@@ -41,7 +41,7 @@ $().ready(function() {
 		// ---------- TAB-BAR PAGE CONTOLLER --------------------------------------------------------
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
-		    var nextPage = $(e.target.hash);
+		    var nextPage = e.target.hash;
 		    
 		    // Check if reports
 		    if(e.target.hash == '#reports'){
@@ -166,7 +166,7 @@ $().ready(function() {
 		// Update GPS On page change
 		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
 		
-		var toPage = $(toPage),
+		var toPage = $(toPage);
 		fromPage = $("#pages .current");
 				
 		if(toPage.hasClass("current") || toPage === fromPage) {
