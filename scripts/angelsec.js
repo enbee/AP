@@ -42,7 +42,7 @@ $().ready(function() {
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
 		    //var nextPage = $(e.target.hash);
-		    var nextPage = this.href;
+		    var nextPage = this.href.hash;
 		    
 		    // Check if reports
 		    if(e.target.hash == '#reports'){
