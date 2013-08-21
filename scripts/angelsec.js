@@ -57,9 +57,9 @@ $('#tab-bar a').on('click', function(e){
 */		
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
-		    //var nextPage = $(e.target.hash);
-		    alert('Page: '+this.attr( "href" ));
-		    var nextPage = this.attr( "href" );
+		    var nextPage = $(e.target.hash);
+		    alert('Page: ');
+		    //var nextPage = this.attr( "href" );
 		    //alert(JSON.stringify(nextPage));
 		    // Check if reports
 		    if(e.target.hash == '#reports'){
