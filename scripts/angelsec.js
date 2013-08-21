@@ -162,7 +162,7 @@ $().ready(function() {
 	
 	// -------- PAGE SWITCHER -------------------------------------------------------------------------
 	function page(toPage) {
-		
+		alert(toPage);
 		// Update GPS On page change
 		navigator.geolocation.getCurrentPosition(onGpsSuccess, onGpsError, { enableHighAccuracy: true });
 		
