@@ -42,8 +42,8 @@ $().ready(function() {
 		$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
 		    //var nextPage = $(e.target.hash);
-		    var nextPage = this.href.hash;
-		    
+		    var nextPage = e.target.hash;
+		    alert(nextPage);
 		    // Check if reports
 		    if(e.target.hash == '#reports'){
 			    // Populate Current Report List
