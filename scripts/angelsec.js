@@ -39,11 +39,27 @@ $().ready(function() {
 		}
 		
 		// ---------- TAB-BAR PAGE CONTOLLER --------------------------------------------------------
-		$('#tab-bar a').on('click', function(e){
+		/*
+$('#tab-bar a').on('click', function(e){
 			e.preventDefault();
 		    var nextPage = $(e.target.hash);
 		    //var nextPage = e.target.hash;
 		    alert(JSON.stringify(nextPage));
+		    // Check if reports
+		    if(e.target.hash == '#reports'){
+			    // Populate Current Report List
+			    $("#form-list").empty();
+			    getActiveReports();
+		    }
+		    
+			page(nextPage);
+		});
+*/		
+		$('#tab-bar').on('click', 'a' function(e){
+			e.preventDefault();
+		    //var nextPage = $(e.target.hash);
+		    var nextPage = e.target.hash;
+		    alert(nextPage);
 		    // Check if reports
 		    if(e.target.hash == '#reports'){
 			    // Populate Current Report List
