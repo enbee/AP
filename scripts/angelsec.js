@@ -43,7 +43,7 @@ $().ready(function() {
 			e.preventDefault();
 		    //var nextPage = $(e.target.hash);
 		    var nextPage = e.target.hash;
-		    alert(e);
+		    alert(JSON.stringify(e));
 		    // Check if reports
 		    if(e.target.hash == '#reports'){
 			    // Populate Current Report List
