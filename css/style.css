@@ -84,7 +84,27 @@ input#postcodeField { width:25% !important; }
 #tab-bar a { background-color: #000; color: #fff; display: block; font-weight: bold; overflow: hidden; position: relative; text-align: center; text-decoration: none; -webkit-touch-callout:none; padding-top: 10px; padding-bottom: 10px; line-height: 75px; }
 */
 
+/* this makes the nav bar a bit higher than default */
+.myNavBar .ui-btn .ui-btn-inner { padding-top: 40px !important; }
 
+/* and this makes the space for the icons a bit bigger */
+.myNavBar .ui-btn .ui-icon { width: 40px!important; height: 40px!important; margin-left: -20px !important; box-shadow: none!important; -moz-box-shadow: none!important; -webkit-box-shadow: none!important; -webkit-border-radius: 0 !important; border-radius: 0 !important; 
+margin-top:-5px;
+}
+
+/* this inserts the actual custom icon, adjust size to taste */
+#homeBtn .ui-icon {
+	background: url(images/home.png) 50% 50% no-repeat;
+	background-size:32px 32px;
+}
+#reportsBtn .ui-icon {
+	background: url(images/report.png) 50% 50% no-repeat;
+	background-size:32px 32px;
+}
+#photoBtn .ui-icon {
+	background: url(images/photo.png) 50% 50% no-repeat;
+	background-size:32px 32px;
+}
 
 
 /* PHOTO UPLOAD STYLING  */
