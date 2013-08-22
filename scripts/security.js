@@ -68,12 +68,12 @@ function handleAuth() {
 function handleLogin() {
 	
 	var form = $("#loginForm");
-	alert('Handle Login');
+	
 	// - Disable the button so we can't resubmit while we wait
-	$("#submitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
+	$("#submitBtn",form).attr("disabled","disabled");
 	var u = $("#username", form).val();
 	var p = $("#password", form).val();
-	
+	alert('Handle Login: User: '+u+' // Pass: '+p);
 	if(u != '' && p!= '') {
 		
 		// SEND LOGIN FORM
