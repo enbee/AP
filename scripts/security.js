@@ -68,7 +68,7 @@ function handleAuth() {
 function handleLogin() {
 	
 	var form = $("#loginForm");
-	alert('Handle Loging': form);
+	alert('Handle Loging:' form);
 	// - Disable the button so we can't resubmit while we wait
 	$("#submitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
 	var u = $("#username", form).val();
