@@ -96,14 +96,20 @@ margin-top:-5px;
 #homeBtn .ui-icon {
 	background: url(images/home.png) 50% 50% no-repeat;
 	background-size:32px 32px;
+	background-color: transparent;
+	box-shadow: none;
 }
 #reportsBtn .ui-icon {
 	background: url(images/report.png) 50% 50% no-repeat;
 	background-size:32px 32px;
+	background-color: transparent;
+	box-shadow: none;
 }
 #photoBtn .ui-icon {
 	background: url(images/photo.png) 50% 50% no-repeat;
 	background-size:32px 32px;
+	background-color: transparent;
+	box-shadow: none;
 }
 
 
