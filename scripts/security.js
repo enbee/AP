@@ -40,6 +40,7 @@ function handleAuth() {
 				// - STORE DATA
 				window.localStorage.setItem("ap_auth", ac);
 				window.localStorage.setItem("ap_authorised", true);
+				auth = ac;
 				
 				$("#pages .current").removeClass("current").fadeToggle('fast', 'linear', function(){
 					$("#login").addClass("current").toggle('slow');
@@ -73,12 +74,12 @@ function handleLogin() {
 	$("#submitBtn",form).attr("disabled","disabled");
 	var u = $("#username", form).val();
 	var p = $("#password", form).val();
-	alert('Handle Login: User: '+u+' // Pass: '+p);
+	
 	if(u != '' && p!= '') {
 		
 		// SEND LOGIN FORM
         $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p,auth:auth}, function(response) {
-        	alert(JSON.stringify(response));   	
+        	
         	// SET VARS AND UPDATE THE GLOBALS
         	var success = response.response;
         	var user_id = response.user_id;
