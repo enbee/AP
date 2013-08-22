@@ -41,7 +41,7 @@ function handleAuth() {
 				window.localStorage.setItem("ap_auth", ac);
 				window.localStorage.setItem("ap_authorised", true);
 				
-				$("#pages .current").removeClass("current").toggle('slow', function(){
+				$("#pages .current").removeClass("current").fadeToggle('fast', 'linear', function(){
 					$("#login").addClass("current").toggle('slow');
 				});
 				
@@ -68,7 +68,7 @@ function handleAuth() {
 function handleLogin() {
 	
 	var form = $("#loginForm");
-	
+	alert('Handle Loging': form);
 	// - Disable the button so we can't resubmit while we wait
 	$("#submitBtn",form).removeClass("ui-btn-active").attr("disabled","disabled");
 	var u = $("#username", form).val();
