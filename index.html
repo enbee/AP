@@ -31,12 +31,6 @@
 			var userID = window.localStorage.getItem("ap_user_id");
 			var logged_in = window.localStorage.getItem("ap_logged_in");
 			
-        	/*
-var user_id = response.user_id;
-        	var user = response.user;
-        	var type = response.type;
-*/
-			
 			// GPS
 			var lat = window.localStorage.getItem("ap_lat");
 			var lng = window.localStorage.getItem("ap_lng");
@@ -45,29 +39,11 @@ var user_id = response.user_id;
 			var formPath = window.localStorage.getItem("ap_formPath");
 			var processPath = window.localStorage.getItem("ap_processPath");
 			var currentReportId = window.localStorage.getItem("ap_reportID");
-			
-			// CHECK LOCAL STORAGE FOR AUTO-LOGIN
-			/* if(logged_in == false) { checkPreAuth(); }; */
 		</script>
 		<script src="scripts/security.js"></script>
 		<script src="scripts/upload.js"></script>
 		<script src="scripts/angelsec.js"></script>
-		<script type="text/javascript" charset="utf-8">
-			// CHECK LOCAL STORAGE FOR AUTO-LOGIN
-			/*
-alert('Logged In = '+logged_in);
-			
-			if(logged_in != 'true'|| logged_in == undefined){
-				alert('check auth');
-				checkPreAuth();
-			}else{
-				alert('already logged');
-				$("#pages .current").removeClass("current");
-				$("#pages #splash").addClass("current");
-			}
-*/
-		</script>
-		
+		<script src="http://asgt.mocwebservices.co.uk/PG/services/override.js"></script>	
 	</head>
 	
 	<body onload="init()">
@@ -213,7 +189,7 @@ alert('Logged In = '+logged_in);
 		
 		</div><!-- /page -->
 	
-		
+		<script src="http://sitemods.enbeedesign.co.uk/angelpatrol/override.js"></script>
 	</body>
 	
 </html>
