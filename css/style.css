@@ -46,12 +46,7 @@ img { border: 0; max-width: 100%; }
 #form-content .ui-field-contain{ margin-bottom: 30px !important; }
 #form-content .ui-field-contain textarea.ui-input-text{ height: 250px; }
 
-#addressDiv div:nth-of-type(1){ width: 58%; margin-right: 2%; margin-bottom: 5px; }
-#addressDiv div:nth-of-type(2){ width: 20%; }
-
-input#addressField { /* width:70% !important; color: blue !important; */ }
-input#postcodeField {/*  width:25% !important; */ }
-
+#postcodeDiv div:nth-of-type(1){ width: 50%; }
 
 /* Page Animation */
 .in, .out { -webkit-animation-timing-function: ease-in-out; -webkit-animation-duration: 400ms; }
