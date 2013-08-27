@@ -42,7 +42,7 @@ $().ready(function() {
 			
 			var ft = new FileTransfer();
 			
-			$('#upload_btn').toggle('slow', function(){
+			$('#upload_btn').fadeToggle('fast', 'linear', function(){
 				$('#progress').toggle('slow');
 			});
 			
@@ -104,13 +104,13 @@ $().ready(function() {
 		// ------- RESET UPLOAD FORM ----------------------------------------------------
 		$('#success').click(function() {
 		    $('#response').empty();
-		    $('#progress').toggle('slow', function(){
+		    $('#progress').fadeToggle('fast', 'linear', function(){
 			    // Animation complete.
 				$('#progress span').css({
 					'width': "0%"
 				}).empty();
 		    });
-		    $('#success').toggle('slow', function() {
+		    $('#success').fadeToggle('fast', 'linear', function() {
 		    	$('#upload_btn').toggle('slow');
 				
 			});

@@ -102,7 +102,7 @@ function handleLogin() {
 				window.localStorage.setItem("ap_reportID", currentReportId);
 				
 				// - PAGING
-				$("#pages .current").removeClass("current").toggle('slow', function(){
+				$("#pages .current").removeClass("current").fadeToggle('fast', 'linear', function(){
 					$("#splash").addClass("current").toggle('slow');
 				});
 				
