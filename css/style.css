@@ -46,6 +46,8 @@ img { border: 0; max-width: 100%; }
 #form-content .ui-field-contain{ margin-bottom: 30px !important; }
 #form-content .ui-field-contain textarea.ui-input-text{ height: 250px; }
 
+#addressDiv .ui-field-contain{ margin-bottom: 10px !important; }
+
 #postcodeDiv div:nth-of-type(1){ width: 50%; }
 
 /* Page Animation */
