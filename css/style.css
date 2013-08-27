@@ -12,11 +12,6 @@ html, body{
  border: 0;
 }
 body {
-/*
- font-family:Arial,  sans-serif;
- line-height:1.5;
- font-size:16px;
-*/
  text-align: center;
  word-wrap: break-word;
  -webkit-text-size-adjust: none;
@@ -35,12 +30,9 @@ img { border: 0; max-width: 100%; }
 
 /* Page Control */
 #pages > div { display: none; padding: 10px; }
-/* #pages > div.current { display: block; } */
 
 /* Default Page Styling */
 #pages{ position:relative; }
-
-
 
 #pages #login { padding-top: 50px; }
 
@@ -53,12 +45,9 @@ img { border: 0; max-width: 100%; }
 #form-content .ui-field-contain{ margin-bottom: 30px !important; }
 #form-content .ui-field-contain textarea.ui-input-text{ height: 250px; }
 
-input#addressField { width:70% !important; margin-right: 5% !important; }
-input#postcodeField { width:25% !important; }
+input #addressField { width:70% !important; margin-right: 5% !important; background-color: aqua; }
+input #postcodeField { width:25% !important; }
 
-
-/* Update this style */
-/* #pages > div { display: none; position: absolute; top:0; left:0; width:100%; height: 100%; } */
 
 /* Page Animation */
 .in, .out { -webkit-animation-timing-function: ease-in-out; -webkit-animation-duration: 400ms; }
