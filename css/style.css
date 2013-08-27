@@ -45,6 +45,8 @@ img { border: 0; max-width: 100%; }
 #form-content .ui-field-contain{ margin-bottom: 30px !important; }
 #form-content .ui-field-contain textarea.ui-input-text{ height: 250px; }
 
+#addressDiv div{ width: auto; }
+
 input#addressField { width:70% !important; margin-right: 5% !important; color: blue !important; }
 input#postcodeField { width:25% !important; }
 
