@@ -90,11 +90,15 @@ function handleLogin() {
         	formPath = response.formPath;
         	processPath = response.processPath;
         	userID = response.user_id;
-        	if(response.report != null){
+        	
+        	alert(response.report);
+        	/*
+if(response.report != null){
 	        	alert('EMPTY!');
         	}else{
 	        	currentReportId = response.report.report_id;
         	}
+*/
         	
         	
             if(success == 'true') {
