@@ -74,7 +74,7 @@ $().ready(function() {
 		function win(r) {
 		
 			var str = r.response;
-			
+			alert(str);
 			if (str.substr(0, 5) == 'ERROR') {
 				$('#response').append(str);
 			}else{
