@@ -54,6 +54,7 @@ $().ready(function() {
 				    $("#photo-buttons").css("display", "none");
 					$("#photo-warning").css("display", "block");					
 			    }else{
+			    	alert(currentReportAddress);
 			    	$("#insertFormID").append(currentReportAddress);
 					$("#insertFormTS").append(currentReportTS);
 				    $("#photo-warning").css("display", "none");
@@ -220,6 +221,12 @@ $().ready(function() {
         	
         	var success = response.response;
         	currentReportId = response.reportID;
+	        currentReportAddress = response.address + ', ' + response.postcode;
+	        currentReportTS = response.timestamp;
+        	
+        	window.localStorage.setItem("ap_reportID", currentReportId);
+        	window.localStorage.setItem("ap_reportAddress", currentReportAddress);
+			window.localStorage.setItem("ap_reportAddress", currentReportTS);
         	
         	// Set variables
             if(success == 'true') {
