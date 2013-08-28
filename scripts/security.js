@@ -92,11 +92,9 @@ function handleLogin() {
         	userID = response.user_id;
         	
         	if(response.report == null){
-	        	alert('EMPTY!');
 	        	currentReportId = '';
 	        	currentReportAddress = '';
         	}else{
-        		alert(JSON.stringify(response.report));
 	        	currentReportId = response.report.report_id;
 	        	currentReportAddress = response.report.address + ', ' + response.report.postcode;
         	}

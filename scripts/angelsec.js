@@ -48,6 +48,15 @@ $().ready(function() {
 			    // Populate Current Report List
 			    $("#form-list").empty();
 			    getActiveReports();
+		    }else if(nextPage == '#photo'){
+			    // Populate Current Report List
+			    if(currentReportId == ''){
+				    $("#photo-buttons").css("display", "none");
+					$("#photo-warning").css("display", "block");
+			    }else{
+				    $("#photo-warning").css("display", "none");
+					$("#photo-buttons").css("display", "block");
+			    }
 		    }
 		    
 			page(nextPage);
