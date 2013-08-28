@@ -78,7 +78,7 @@ $().ready(function() {
 			if (str.substr(0, 5) == 'ERROR') {
 				$('#response').append(str);
 			}else{
-				var imgURL = server_loc+str;
+				var imgURL = server_loc + str;
 				$('#progress span').html("Upload Complete");
 				//$('#response').prepend('Success: '+imgURL);
 				// Complete
