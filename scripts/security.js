@@ -94,9 +94,11 @@ function handleLogin() {
         	if(response.report == null){
 	        	currentReportId = '';
 	        	currentReportAddress = '';
+	        	currentReportTS = '';
         	}else{
 	        	currentReportId = response.report.report_id;
 	        	currentReportAddress = response.report.address + ', ' + response.report.postcode;
+	        	currentReportTS = response.report.timestamp;
         	}
         	
         	
@@ -111,6 +113,7 @@ function handleLogin() {
 				window.localStorage.setItem("ap_processPath", processPath);
 				window.localStorage.setItem("ap_reportID", currentReportId);
 				window.localStorage.setItem("ap_reportAddress", currentReportAddress);
+				window.localStorage.setItem("ap_reportAddress", currentReportTS);
 				
 				// - PAGING
 				$("#pages .current").removeClass("current").fadeToggle('fast', 'linear', function(){

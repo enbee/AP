@@ -54,6 +54,7 @@ $().ready(function() {
 				    $("#photo-buttons").css("display", "none");
 					$("#photo-warning").css("display", "block");
 					$("#insertFormID").append(currentReportAddress);
+					$("#insertFormTS").append(currentReportTS);
 			    }else{
 				    $("#photo-warning").css("display", "none");
 					$("#photo-buttons").css("display", "block");
