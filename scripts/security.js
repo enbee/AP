@@ -81,7 +81,7 @@ function handleLogin() {
 		// SEND LOGIN FORM
 		var loginPHP = server_loc + file_path + 'login.php';
         $.post(loginPHP, {username:u,password:p,auth:auth}, function(response) {
-        	//alert(JSON.stringify(response));
+        	
         	// SET VARS AND UPDATE THE GLOBALS
         	var success = response.response;
         	var user_id = response.user_id;
@@ -91,14 +91,15 @@ function handleLogin() {
         	processPath = response.processPath;
         	userID = response.user_id;
         	
-        	alert(response.report);
-        	/*
-if(response.report != null){
+        	if(response.report == null){
 	        	alert('EMPTY!');
+	        	currentReportId = '';
+	        	currentReportAddress = '';
         	}else{
+        		alert(JSON.stringify(response.report));
 	        	currentReportId = response.report.report_id;
+	        	currentReportAddress = response.report.address + ', ' + response.report.postcode;
         	}
-*/
         	
         	
             if(success == 'true') {
@@ -111,6 +112,7 @@ if(response.report != null){
 				window.localStorage.setItem("ap_formPath", formPath);
 				window.localStorage.setItem("ap_processPath", processPath);
 				window.localStorage.setItem("ap_reportID", currentReportId);
+				window.localStorage.setItem("ap_reportAddress", currentReportAddress);
 				
 				// - PAGING
 				$("#pages .current").removeClass("current").fadeToggle('fast', 'linear', function(){
