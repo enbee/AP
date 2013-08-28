@@ -53,6 +53,8 @@ $().ready(function() {
 			    if(currentReportId == ''){
 				    $("#photo-buttons").css("display", "none");
 					$("#photo-warning").css("display", "block");
+					alert(currentReportAddress);
+					alert(currentReportTS);
 					$("#insertFormID").append(currentReportAddress);
 					$("#insertFormTS").append(currentReportTS);
 			    }else{
