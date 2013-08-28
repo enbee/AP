@@ -81,7 +81,7 @@ function handleLogin() {
 		// SEND LOGIN FORM
 		var loginPHP = server_loc + file_path + 'login.php';
         $.post(loginPHP, {username:u,password:p,auth:auth}, function(response) {
-        	alert(JSON.stringify(response));
+        	//alert(JSON.stringify(response));
         	// SET VARS AND UPDATE THE GLOBALS
         	var success = response.response;
         	var user_id = response.user_id;
@@ -90,7 +90,12 @@ function handleLogin() {
         	formPath = response.formPath;
         	processPath = response.processPath;
         	userID = response.user_id;
-        	currentReportId = response.report.report_id;
+        	if(response.report != null){
+	        	alert('EMPTY!');
+        	}else{
+	        	currentReportId = response.report.report_id;
+        	}
+        	
         	
             if(success == 'true') {
             	
