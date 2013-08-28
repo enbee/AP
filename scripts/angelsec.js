@@ -54,9 +54,8 @@ $().ready(function() {
 				    $("#photo-buttons").css("display", "none");
 					$("#photo-warning").css("display", "block");					
 			    }else{
-			    	alert(currentReportAddress);
-			    	$("#insertFormID").append(currentReportAddress);
-					$("#insertFormTS").append(currentReportTS);
+			    	$("#insertFormID").empty().append(currentReportAddress);
+					$("#insertFormTS").empty().append(currentReportTS);
 				    $("#photo-warning").css("display", "none");
 					$("#photo-buttons").css("display", "block");
 			    }
