@@ -65,8 +65,8 @@ $().ready(function() {
 					}
 				}
 			};  
-		
-			ft.upload(imageURI, encodeURI("http://asgt.mocwebservices.co.uk/PG/services/upload.php"), win, fail, options);            
+			var uploadPHP = server_loc + file_path + 'upload.php';
+			ft.upload(imageURI, encodeURI(uploadPHP), win, fail, options);            
 		}
 		
 		
@@ -78,7 +78,7 @@ $().ready(function() {
 			if (str.substr(0, 5) == 'ERROR') {
 				$('#response').append(str);
 			}else{
-				var imgURL = 'http://asgt.mocwebservices.co.uk/'+str;
+				var imgURL = server_loc+str;
 				$('#progress span').html("Upload Complete");
 				//$('#response').prepend('Success: '+imgURL);
 				// Complete

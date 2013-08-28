@@ -119,7 +119,8 @@ $().ready(function() {
 	function getActiveReports(){
 		
 		// Call for json response of reports
-		 $.post("http://asgt.mocwebservices.co.uk/PG/services/get-report-list.php", {auth:auth, userID:userID}, function(reports) {
+		var reportlistPHP = server_loc + file_path + 'get-report-list.php';
+		 $.post(reportlistPHP, {auth:auth, userID:userID}, function(reports) {
         	        	
         	// If reports .. display list
 			if(reports.length == 0){
@@ -175,11 +176,6 @@ $().ready(function() {
 		fromPage.removeClass("current").fadeToggle('fast', 'linear', function(){
 			toPage.addClass("current").toggle('slow');
 		});
-		/*
-fromPage.removeClass("current").toggle('slow', function(){
-			toPage.addClass("current").toggle('slow');
-		});
-*/
 		
 	}
 	

@@ -4,7 +4,7 @@ function init() {
 }
 
 function deviceReady() {
-	// HANDEL LOGINS
+	// HANDLE LOGINS
 	$("#authForm").on('submit',handleAuth);
 	$("#loginForm").on('submit',handleLogin);
 }
@@ -27,8 +27,9 @@ function handleAuth() {
 	$("#authBtn",form).attr("disabled","disabled");
 	var ac = $("#auth", form).val();
 	if(ac != '') {
-	
-        $.post("http://asgt.mocwebservices.co.uk/PG/services/authorise.php", {auth:ac}, function(response) {
+		
+		var authorisePHP = server_loc + file_path + 'authorise.php';
+        $.post(authorisePHP, {auth:ac}, function(response) {
         	        	
         	var success = response.response;
         	var userID = response.user_id;
@@ -78,7 +79,8 @@ function handleLogin() {
 	if(u != '' && p!= '') {
 		
 		// SEND LOGIN FORM
-        $.post("http://asgt.mocwebservices.co.uk/PG/services/login.php", {username:u,password:p,auth:auth}, function(response) {
+		var loginPHP = server_loc + file_path + 'login.php';
+        $.post(loginPHP, {username:u,password:p,auth:auth}, function(response) {
         	
         	// SET VARS AND UPDATE THE GLOBALS
         	var success = response.response;
