@@ -49,16 +49,8 @@ $().ready(function() {
 			    $("#form-list").empty();
 			    getActiveReports();
 		    }else if(nextPage == '#photo'){
-			    // Reset Photo Page
-			    if(currentReportId == ''){
-				    $("#photo-buttons").css("display", "none");
-					$("#photo-warning").css("display", "block");					
-			    }else{
-			    	$("#insertFormID").empty().append(currentReportAddress);
-					$("#insertFormTS").empty().append(currentReportTS);
-				    $("#photo-warning").css("display", "none");
-					$("#photo-buttons").css("display", "block");
-			    }
+			   // Reset Photo Page
+			   resetPhotoForm();
 		    }
 		    
 			page(nextPage);
@@ -235,15 +227,8 @@ $().ready(function() {
 				$("#pages .current").removeClass("current").toggle('slow', function(){
 					// Update Current Report
 					// Reset Photo Page
-				    if(currentReportId == ''){
-					    $("#photo-buttons").css("display", "none");
-						$("#photo-warning").css("display", "block");					
-				    }else{
-				    	$("#insertFormID").empty().append(currentReportAddress);
-						$("#insertFormTS").empty().append(currentReportTS);
-					    $("#photo-warning").css("display", "none");
-						$("#photo-buttons").css("display", "block");
-				    }
+					resetPhotoForm();
+					
 					// Go To Photo Uploader
 					$("#photo").addClass("current").toggle('slow');
 				});
@@ -276,6 +261,32 @@ $().ready(function() {
 	    });
 	    return o;
 	};
+	
+	
+	function resetPhotoForm(){
+		// EMPTY RESPONSE
+		$('#response').empty();
+		
+		// RESET PROGRESS BAR
+		$('#progress span').css({
+			'width': "0%"
+		}).empty();
+		
+		$('#progress').css("display", "none");
+		$('#success').css("display", "block");
+		
+		// DISPLAY CORRECT PAGE AND / OR SET ADDRESS
+	    if(currentReportId == ''){
+		    $("#photo-buttons").css("display", "none");
+			$("#photo-warning").css("display", "block");					
+	    }else{
+	    	$("#insertFormID").empty().append(currentReportAddress);
+			$("#insertFormTS").empty().append(currentReportTS);
+		    $("#photo-warning").css("display", "none");
+			$("#photo-buttons").css("display", "block");
+	    }
+		
+	}
 	
 	
 	// -------- GPS RESPONSE FUNCTIONS ----------------------------------------------------------------------------
