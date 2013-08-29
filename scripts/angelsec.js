@@ -49,7 +49,7 @@ $().ready(function() {
 			    $("#form-list").empty();
 			    getActiveReports();
 		    }else if(nextPage == '#photo'){
-			    // Populate Current Report List
+			    // Reset Photo Page
 			    if(currentReportId == ''){
 				    $("#photo-buttons").css("display", "none");
 					$("#photo-warning").css("display", "block");					
@@ -234,7 +234,16 @@ $().ready(function() {
             	
 				$("#pages .current").removeClass("current").toggle('slow', function(){
 					// Update Current Report
-					
+					// Reset Photo Page
+				    if(currentReportId == ''){
+					    $("#photo-buttons").css("display", "none");
+						$("#photo-warning").css("display", "block");					
+				    }else{
+				    	$("#insertFormID").empty().append(currentReportAddress);
+						$("#insertFormTS").empty().append(currentReportTS);
+					    $("#photo-warning").css("display", "none");
+						$("#photo-buttons").css("display", "block");
+				    }
 					// Go To Photo Uploader
 					$("#photo").addClass("current").toggle('slow');
 				});
