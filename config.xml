@@ -20,12 +20,12 @@
     <!-- PREFERENCES -->
     
     <preference name="orientation"                value="portrait" />  
-    <preference name="phonegap-version" value="2.9.0" />
+    <preference name="phonegap-version" value="3.1.0" />
     
     
     <!-- ACCESS PERMISSIONS -->
     <access origin="http://127.0.0.1*"/>
-    <access origin="http://asgt.mocwebservices.co.uk" />
+    <access origin="http://angelpatrol.co.uk" />
     <access origin=".*"/>
 
 </widget>
