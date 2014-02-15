@@ -34,10 +34,11 @@ function handleAuth() {
         	var success = response.response;
         	var userID = response.user_id;
         	
-        	alert(success);
+        	
         	
         	// CHECK SUCCESS STATUS
             if(success == 'true') {
+            alert('success');
             	navigator.notification.alert("Congratulations, authorisation successful. Please login to continue.");
 				
 				// - STORE DATA
@@ -52,6 +53,7 @@ function handleAuth() {
 				$("#authBtn").removeAttr("disabled");
 				
 			} else {
+			alert('fail');
 				navigator.notification.alert("Authorisation failed, please try again or contact your employer.", function() {});
 			}
 			$("#authBtn").removeAttr("disabled");
