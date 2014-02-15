@@ -230,7 +230,7 @@ $().ready(function() {
         	// Set variables
             if(success == 'true') {
             	
-            	navigator.notification.alert("Congratulations, report submitted successfully. Now add your images.");
+            	alert("Congratulations, report submitted successfully. Now add your images.");
             	
 				$("#pages .current").removeClass("current").toggle('slow', function(){
 					// Update Current Report
@@ -251,7 +251,7 @@ $().ready(function() {
 				$("#reportSubmitBtn").removeAttr("disabled");
 				
 			} else {
-				navigator.notification.alert("Report submission failed. Check your internet connection and try again.", function() {});
+				alert("Report submission failed. Check your internet connection and try again.", function() {});
 			}
 			$("#reportSubmitBtn").removeAttr("reportSubmitBtn");
 		},"json");

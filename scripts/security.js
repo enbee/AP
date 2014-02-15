@@ -134,13 +134,13 @@ function handleLogin() {
 				$("#submitBtn").removeAttr("disabled");
 				
 			} else {
-				navigator.notification.alert("Your login failed", function() {});
+				alert("Your login failed", function() {});
 			}
 			$("#submitBtn").removeAttr("disabled");
 		},"json");
 	} else {
 		// - LOGIN ERROR HANDLING
-		navigator.notification.alert("You must enter a username and password", function() {});
+		alert("You must enter a username and password", function() {});
 		$("#submitBtn").removeAttr("disabled");
 	}
 	return false;
