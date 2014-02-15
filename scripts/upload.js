@@ -1,5 +1,5 @@
 // JQUERY READY
-$().ready(function() {  
+$(document).ready(function() {  
 	// Wait for PhoneGap to load
 	document.addEventListener("deviceready", onDeviceReady, false);
 
