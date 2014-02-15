@@ -27,12 +27,14 @@ function handleAuth() {
 	$("#authBtn",form).attr("disabled","disabled");
 	var ac = $("#auth", form).val();
 	if(ac != '') {
-		alert('FOO');
+		
 		var authorisePHP = server_loc + file_path + 'authorise.php';
         $.post(authorisePHP, {auth:ac}, function(response) {
         	        	
         	var success = response.response;
         	var userID = response.user_id;
+        	
+        	alert(success);
         	
         	// CHECK SUCCESS STATUS
             if(success == 'true') {
