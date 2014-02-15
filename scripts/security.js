@@ -38,8 +38,9 @@ function handleAuth() {
         	
         	// CHECK SUCCESS STATUS
             if(success == 'true') {
-            alert('success');
-            	navigator.notification.alert("Congratulations, authorisation successful. Please login to continue.");
+            
+            	/* navigator.notification.alert("Congratulations, authorisation successful. Please login to continue."); */
+            	alert("Congratulations, authorisation successful. Please login to continue.");
 				
 				// - STORE DATA
 				window.localStorage.setItem("ap_auth", ac);
@@ -54,13 +55,15 @@ function handleAuth() {
 				
 			} else {
 			alert('fail');
-				navigator.notification.alert("Authorisation failed, please try again or contact your employer.", function() {});
+				/* navigator.notification.alert("Authorisation failed, please try again or contact your employer.", function() {}); */
+				alert("Authorisation failed, please try again or contact your employer.");
 			}
 			$("#authBtn").removeAttr("disabled");
 		},"json");
 	} else {
 		
-		navigator.notification.alert("You must enter a valid authorisation code.", function() {});
+		/* navigator.notification.alert("You must enter a valid authorisation code.", function() {}); */
+		alert("You must enter a valid authorisation code.");
 		$("#authBtn").removeAttr("disabled");
 	}
 	
