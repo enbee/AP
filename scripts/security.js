@@ -32,9 +32,7 @@ function handleAuth() {
         $.post(authorisePHP, {auth:ac}, function(response) {
         	        	
         	var success = response.response;
-        	var userID = response.user_id;
-        	
-        	
+        	var userID = response.user_id;        	
         	
         	// CHECK SUCCESS STATUS
             if(success == 'true') {
