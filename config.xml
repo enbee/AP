@@ -20,7 +20,7 @@
     <!-- PREFERENCES -->
     
     <preference name="orientation"                value="portrait" />  
-    <preference name="phonegap-version" value="3.6.3" />    
+    <preference name="phonegap-version" value="3.7.0" />    
     
     <!-- ACCESS PERMISSIONS -->
     <access origin="http://127.0.0.1*"/>
